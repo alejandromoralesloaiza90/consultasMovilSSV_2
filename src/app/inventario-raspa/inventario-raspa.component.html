@@ -1,17 +1,16 @@
 <div class="container-fluid">
-    <div class="row">
+    <div class="row  mt-5 text-center">
         <div class="col-md-12">
-          <h2>Consultar inventario Raspa y Listo</h2>
+          <h4>Consultar inventario Raspa y Listo</h4>
         </div>
     </div>
       <br>
       <div class="row">
         <div class="col-md-12 px-5 ">
-          <form class="text-center"  action="">
+          <form class=""  action="">
             <label for="">Por favor digite su cedula</label>
-            <input  class="form-control" #cedula  type="text"><br>
-    
-            <input class="btn btn-primary"value="Consultar" (click)="traerDatosRaspa(cedula.value)"   type="button">
+            <input  class="form-control mt-3" #cedula  type="text">   
+            <input class="btn btn-primary mt-2"value="Consultar" (click)="traerDatosRaspa(cedula.value)"   type="button">
     
           </form>
         </div>
@@ -25,7 +24,7 @@
       </div>
     
     
-      <div class="row">
+      <div class="row mt-4">
         <div class="col-md-12">
           <div class="table-responsive">
             <table class="table">

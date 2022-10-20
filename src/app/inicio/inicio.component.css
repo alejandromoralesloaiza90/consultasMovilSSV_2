@@ -1,12 +1,6 @@
-.imagen{
-background-image: url("https://10.25.1.9/ssvsa/wp-content/themes/ssvsa/assets/img/post-header.jpg");
-background-position: 50%;
-background-size: cover;
--webkit-box-align: center;
-align-items: center;
-display: flex;
-height: 200px;
--webkit-box-pack: center;
--ms-flex-pack: center;
-justify-content: center;
+h3{
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: rgb(12, 12, 214);
+    margin-top: 5%;
 }
