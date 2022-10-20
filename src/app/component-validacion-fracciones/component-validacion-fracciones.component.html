@@ -9,8 +9,8 @@
         <div class="col-md-12 px-5">
         <form class=""  action="">
             <label for="">Por favor escanee o digite la fraccion</label>
-            <input class="form-control mt-3" type="text">
-            <input class="btn btn-primary mt-2" value="Consultar"  type="submit">
+            <input class="form-control mt-3" #fracciones type="text">
+            <input class="btn btn-primary mt-2" value="Consultar" (click)="traerFracciones(fracciones.value)" type="submit">
 
         </form>
         </div>
@@ -19,7 +19,7 @@
     <div class="row">
         <div class="col-md-12">
         <h6>Fracción consultada</h6>
-        <p><!-- aqui va la fracción cuando se ingresa en el input --></p>
+        <p>{{fracciones.value}}</p>
         </div>
     </div>
     <div class="row mt-4">
@@ -41,17 +41,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
+                        <tr *ngFor="let fraccion of consultasFracciones">
+                            <th>{{fraccion.name}}</th>
                         </tr>
                         <tr>
                         <th scope="row">2</th>

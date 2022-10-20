@@ -9,10 +9,10 @@
         <div class="col-md-12 px-5">
         <form class=""  action="">
             <label for="">Por favor digite la serie</label>
-            <input class="form-control mt-3" type="text"><br>
+            <input class="form-control mt-3" #serie type="text"><br>
             <label for="">Digite el número</label>
-            <input class="form-control  mt-3" type="text"><br>
-            <input class="btn btn-primary mt-2" value="Consultar"  type="submit">
+            <input class="form-control mt-3" #numero type="text"><br>
+            <input class="btn btn-primary mt-2" value="Consultar" (click)="traerConsultasPremio(serie.value,numero.value)" type="submit">
 
         </form>
         </div>
@@ -21,7 +21,9 @@
     <div class="row">
         <div class="col-md-12">
         <h6>Serie consultada: </h6>
-        <p><!-- aqui va la serie cuando se ingresa en el input --></p>
+        <p>{{serie.value}}</p>
+        <h6>Número consultada: </h6>
+        <p>{{numero.value}}</p>
         </div>
     </div>
 
@@ -42,13 +44,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr *ngFor="let fracciones of consultasPremio">
                 <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
+                <td>{{fracciones.name}}</td>
+                
                 </tr>
                 <tr>
                 <th scope="row">2</th>
