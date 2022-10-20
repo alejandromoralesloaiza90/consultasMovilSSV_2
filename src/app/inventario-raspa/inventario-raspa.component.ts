@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InventarioRaspaService } from '../inventario-raspa.service';
 
 @Component({
   selector: 'app-inventario-raspa',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InventarioRaspaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private raspas:InventarioRaspaService) { }
 
   ngOnInit(): void {
+
+    this.raspas.cargarRaspas().subscribe(raspa => {
+      console.log(raspa);
+    })
+
+
   }
+
+  cedula: string = "";
 
 }
