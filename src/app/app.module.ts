@@ -8,6 +8,7 @@ import { ComponentValidacionFraccionesComponent } from './component-validacion-f
 import { InicioComponent } from './inicio/inicio.component';
 import { InventarioRaspaComponent } from './inventario-raspa/inventario-raspa.component';
 import { FooterComponent } from './footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: '', component: InicioComponent },
@@ -27,9 +28,10 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [InventarioRaspaComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
