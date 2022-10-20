@@ -6,10 +6,6 @@
     width: 33%;
 }
 
-img{
-    width: 100%;
-}
-
 @media (max-width: 450px){
     p{
         font-size: x-small;
@@ -17,9 +13,22 @@ img{
     h4{
         font-size: x-small;
     }
+    .row{
+        margin-top: 93%;
+    }
+    img{
+        width: 100%;
+    }
 }
 
-.row{
-    margin-top: 93%;
+@media (min-width: 451px){
+    .row{
+        margin-top: 20%;
+    }
+    img{
+       width: 70%; 
+    }
 }
+
+
 

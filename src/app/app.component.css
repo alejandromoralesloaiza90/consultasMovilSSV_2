@@ -1,3 +1,17 @@
 .color{
     background-color: #1f3a93;
 }
+
+@media (min-width: 451px){
+    a{
+        font-size: 78%;
+    } 
+}
+@media (max-width: 450px){
+    a{
+        font-size: 85%;
+    }
+    img{
+        width: 50%;
+    }
+}
