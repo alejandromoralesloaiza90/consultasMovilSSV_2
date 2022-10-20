@@ -9,15 +9,14 @@ import { InicioComponent } from './inicio/inicio.component';
 import { InventarioRaspaComponent } from './inventario-raspa/inventario-raspa.component';
 import { FooterComponent } from './footer/footer.component';
 
+
+
 import { InventarioLoteriaFisicaComponent } from './inventario-loteria-fisica/inventario-loteria-fisica.component';
 import { AnuladosDelDiaComponent } from './anulados-del-dia/anulados-del-dia.component';
 import { TransaccionesDelDiaComponent } from './transacciones-del-dia/transacciones-del-dia.component';
 import { ConsultaPremiosComponent } from './consulta-premios/consulta-premios.component';
-
 import { HttpClientModule } from '@angular/common/http';
-
 import { PremioRaspaService } from './premio-raspa.service';
-
 
 
 const appRoutes: Routes = [
