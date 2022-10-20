@@ -14,8 +14,11 @@ export class InventarioRaspaComponent implements OnInit {
 
   }
 
-  traerDatosRaspa(cedula:string) {
+  //creo una funcion la cual obtiene el json del servicio inventarioRaspa
+  traerDatosRaspa(cedula: string) {
+    //llamo a la funcion del servicio y uso la funcion subscribe para crear un observable 
     this.raspas.cargarRaspas().subscribe(raspa => {
+      //creo una variable la cual guardara la data del observable en formato object, para usarse en el html y mostrar los datos
       this.inventarioRaspas = Object.values(raspa);
       console.log(this.inventarioRaspas);
 

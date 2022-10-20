@@ -18,6 +18,7 @@ import { ConsultaPremiosComponent } from './consulta-premios/consulta-premios.co
 import { HttpClientModule } from '@angular/common/http';
 import { PremioRaspaService } from './premio-raspa.service';
 import { FormsModule } from '@angular/forms';
+import { ValidacionFraccionesService } from './validacion-fracciones.service';
 
 
 const appRoutes: Routes = [
@@ -53,7 +54,13 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule
   ],
-  providers: [InventarioRaspaComponent, PremioRaspaService],
+  providers: [
+    InventarioRaspaComponent,
+    PremioRaspaService,
+    ValidacionFraccionesService,
+    
+  ],
+    
   bootstrap: [AppComponent]
 })
 export class AppModule { }

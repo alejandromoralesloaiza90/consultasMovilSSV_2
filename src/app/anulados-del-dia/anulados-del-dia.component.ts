@@ -12,4 +12,6 @@ export class AnuladosDelDiaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+
 }
