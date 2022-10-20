@@ -10,10 +10,13 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Inventario Raspa</a>
+                <a class="nav-link active" aria-current="page" href="/">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active "  href="#">Premios Raspa</a>
+                <a class="nav-link active" aria-current="page" href="/inventarioRaspa">Inventario Raspa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active "  href="/premiosRaspa">Premios Raspa</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active " href="#">Validacion de fracciones Raspa y listo</a>
@@ -39,123 +42,7 @@
       </nav>
     </div>
   </div>
-  <br><br>
-  <div class="row">
-    <div class="col-md-12">
-      <h2>Consultar inventario Raspa y Listo</h2>
-    </div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="col-md-12 px-5 ">
-      <form class="text-center"  action="">
-        <label for="">Por favor digite su cedula</label>
-        <input class="form-control   " type="text"><br>
-
-        <input class="btn btn-primary" value="Consultar"  type="submit">
-
-      </form>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12">
-      <h6>Cedula consultada</h6>
-      <p><!-- aqui va la cedula cuando se ingresa en el input --></p>
-    </div>
-  </div>
-
-
-  <div class="row">
-    <div class="col-md-12">
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">PRODUCTO</th>
-              <th scope="col">BODEGA</th>
-              <th scope="col">SORTEO</th>
-              <th scope="col">VALOR</th>
-              <th scope="col">FRACCIONES</th>
-              <th scope="col">VENDIDA</th>
-              <th scope="col">SINVENTA</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>@mdo</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-              <td>@mdo</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-              <td>@mdo</td>
-              <td>@mdo</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      
-    </div>
-  </div><br><br><br><br><br><br><br>
-
-  <div class="row color p-5 text-white ">
-    <div class="col-md-4">
-      <img src="https://10.25.1.9/ssvsa/wp-content/themes/ssvsa/assets/img/logo_blanco.png" alt="">
-
-      <p>
-        Gane - Super Servicios del Valle S.A.<br>
-            PBX: 602 214 7100<br>
-            Carrera 5 No. 10 - 93 Cartago <br>
-            Oficina principal
-          
-      </p>
-
-    </div>
-
-
-    <div class="col-md-4">
-      <h4>Superintendencia de Industria y Comercio</h4>
-      <p>
-        Dirección: Cr. 13 No. 27-00 Piso 1-2-4-6-7-10<br>
-        Bogotá D.C, Colombia<br>
-    </p>
-
-    <p>
-      Línea Gratuita Nacional: 018000910165<br>
-      Correo: contactenos@sic.gov.co
-    </p>
-
-    </div>
-
-    <div class="col-md-4">
-      <h4>Canales de atención Mesa de Ayuda</h4>
-      <p>
-        Celular <br>
-        318 734 7049 
-      </p>
-
-      <p>
-        WhatsApp (Para anexar soportes de fallos o solicitudes) <br>
-        318 547 8633 
-      </p>
-
-    </div>
-
-  </div>
 
 </div>
+
+<router-outlet></router-outlet>
