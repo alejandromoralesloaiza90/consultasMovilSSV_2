@@ -9,9 +9,9 @@
         <div class="col-md-12 px-5 ">
           <form class="text-center"  action="">
             <label for="">Por favor digite su cedula</label>
-            <input class="form-control" type="text"><br>
+            <input  class="form-control" #cedula  type="text"><br>
     
-            <input class="btn btn-primary" value="Consultar"  type="submit">
+            <input class="btn btn-primary"value="Consultar" (click)="traerDatosRaspa(cedula.value)"   type="button">
     
           </form>
         </div>
@@ -20,7 +20,7 @@
       <br><br><div class="row">
         <div class="col-md-12">
           <h6>Cedula consultada</h6>
-          <p><!-- aqui va la cedula cuando se ingresa en el input --></p>
+          <p> {{cedula.value}} </p>
         </div>
       </div>
     
@@ -41,13 +41,9 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
+                <tr *ngFor="let recorrer of inventarioRaspas" >
+                  
+                  <td> {{recorrer}} </td>
                 </tr>
                 <tr>
                   <th scope="row">2</th>

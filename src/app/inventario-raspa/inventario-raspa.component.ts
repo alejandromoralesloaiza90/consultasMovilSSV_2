@@ -12,13 +12,21 @@ export class InventarioRaspaComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+
+  traerDatosRaspa(cedula:string) {
     this.raspas.cargarRaspas().subscribe(raspa => {
-      console.log(raspa);
+      this.inventarioRaspas = Object.values(raspa);
+      console.log(this.inventarioRaspas);
+
+      this.cedula = cedula;
+
     })
-
-
   }
 
   cedula: string = "";
+  inventarioRaspas: any[] = [];
+
+  
 
 }
