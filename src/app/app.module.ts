@@ -8,14 +8,30 @@ import { ComponentValidacionFraccionesComponent } from './component-validacion-f
 import { InicioComponent } from './inicio/inicio.component';
 import { InventarioRaspaComponent } from './inventario-raspa/inventario-raspa.component';
 import { FooterComponent } from './footer/footer.component';
+
+import { InventarioLoteriaFisicaComponent } from './inventario-loteria-fisica/inventario-loteria-fisica.component';
+import { AnuladosDelDiaComponent } from './anulados-del-dia/anulados-del-dia.component';
+import { TransaccionesDelDiaComponent } from './transacciones-del-dia/transacciones-del-dia.component';
+import { ConsultaPremiosComponent } from './consulta-premios/consulta-premios.component';
+
 import { HttpClientModule } from '@angular/common/http';
+
 import { PremioRaspaService } from './premio-raspa.service';
+
+
 
 const appRoutes: Routes = [
   { path: '', component: InicioComponent },
   { path: 'premiosRaspa', component: ComponentPremiosComponent },
-  {path:'inventarioRaspa', component:InventarioRaspaComponent},
+  { path: 'inventarioRaspa', component: InventarioRaspaComponent},
+  { path: 'validacionFracciones', component: ComponentValidacionFraccionesComponent},
+  { path: 'inventarioLoteriaFisica', component: InventarioLoteriaFisicaComponent},
+  { path: 'anuladosDelDia', component: AnuladosDelDiaComponent},
+  { path: 'transaccionesDelDia', component: TransaccionesDelDiaComponent},
+  { path: 'consultaPremios', component: ConsultaPremiosComponent},
+
 ];
+
 
 
 @NgModule({
@@ -25,7 +41,11 @@ const appRoutes: Routes = [
     ComponentValidacionFraccionesComponent,
     InicioComponent,
     InventarioRaspaComponent,
-    FooterComponent
+    FooterComponent,
+    InventarioLoteriaFisicaComponent,
+    AnuladosDelDiaComponent,
+    TransaccionesDelDiaComponent,
+    ConsultaPremiosComponent
   ],
   imports: [
     BrowserModule,

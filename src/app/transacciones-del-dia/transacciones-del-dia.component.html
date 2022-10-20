@@ -1,15 +1,17 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-        <h2>Validar estado fracciones Raspe</h2>
+        <h2>Consultar transacciones del día</h2>
         </div>
     </div>
     <br>
     <div class="row">
         <div class="col-md-12 px-5 ">
         <form class="text-center"  action="">
-            <label for="">Por favor escanee o digite la fraccion</label>
-            <input class="form-control" type="text"><br>
+            <label for="">Por favor digite la cedula</label>
+            <input class="form-control" type="text"><br><br>
+            <label for="">Ingrese contraseña de POSSLIM a continuación</label>
+            <input class="form-control" type="password"><br>
 
             <input class="btn btn-primary" value="Consultar"  type="submit">
 
@@ -19,7 +21,7 @@
 
     <div class="row">
         <div class="col-md-12">
-        <h6>Fracción consultada</h6>
+        <h6>Cedula consultada</h6>
         <p><!-- aqui va la fracción cuando se ingresa en el input --></p>
         </div>
     </div>
@@ -29,16 +31,15 @@
                 <table class="table">
                     <thead>
                         <tr>
+                        <th scope="col">TIPO</th>
+                        <th scope="col">PROVEEDOR</th>
+                        <th scope="col">SERVICIO</th>
                         <th scope="col">PRODUCTO</th>
-                        <th scope="col">BODEGA</th>
-                        <th scope="col">NUMERO</th>
-                        <th scope="col">SERIE</th>
-                        <th scope="col">FRACCION</th>
-                        <th scope="col">ESTADO</th>
-                        <th scope="col">FECHA VENTA</th>
-                        <th scope="col">HORA VENTA</th>
-                        <th scope="col">VENDEDOR</th>
-                        <th scope="col">PAGADO</th>
+                        <th scope="col">HORA</th>
+                        <th scope="col">CLAVE</th>
+                        <th scope="col">VALOR</th>
+                        <th scope="col">ACUMULADO</th>
+                        <th scope="col">NRO</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -52,7 +53,6 @@
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>@mdo</td>
-                        <td>@mdo</td>
                         </tr>
                         <tr>
                         <th scope="row">2</th>
@@ -63,8 +63,6 @@
                         <td>@mdo</td>
                         <td>Mark</td>
                         <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
                         </tr>
                         <tr>
                         <th scope="row">3</th>
@@ -75,8 +73,6 @@
                         <td>@mdo</td>
                         <td>Mark</td>
                         <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
                         </tr>
                     </tbody>
                 </table>
