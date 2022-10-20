@@ -12,17 +12,20 @@ export class ComponentPremiosComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.premiosRaspas.cargarPremiosRaspas().subscribe(premiosRaspa => {
-      
-
-      this.savePremios = Object.values(premiosRaspa);
-
-      console.log(this.savePremios);
-
-    });
-
   }
 
+
+  traerPremios(cedula: string) {
+    
+    this.premiosRaspas.cargarPremiosRaspas().subscribe(premiosRaspa => {
+    this.savePremios = Object.values(premiosRaspa);
+      
+      this.cedula = cedula;
+      
+    });
+  }
+
+  cedula: string = "";
   savePremios: any[] = [];
 
 
