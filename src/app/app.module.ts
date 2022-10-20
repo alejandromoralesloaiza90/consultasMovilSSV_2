@@ -9,6 +9,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { InventarioRaspaComponent } from './inventario-raspa/inventario-raspa.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PremioRaspaService } from './premio-raspa.service';
 
 const appRoutes: Routes = [
   { path: '', component: InicioComponent },
@@ -31,7 +32,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     HttpClientModule
   ],
-  providers: [InventarioRaspaComponent],
+  providers: [InventarioRaspaComponent, PremioRaspaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

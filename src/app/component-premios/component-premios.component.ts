@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PremioRaspaService } from '../premio-raspa.service';
 
 @Component({
   selector: 'app-component-premios',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComponentPremiosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private premiosRaspas:PremioRaspaService) { }
 
   ngOnInit(): void {
+
+    this.premiosRaspas.cargarPremiosRaspas().subscribe(premiosRaspa => {
+      
+
+      this.savePremios = Object.values(premiosRaspa);
+
+      console.log(this.savePremios);
+
+    });
+
   }
+
+  savePremios: any[] = [];
+
 
 }
