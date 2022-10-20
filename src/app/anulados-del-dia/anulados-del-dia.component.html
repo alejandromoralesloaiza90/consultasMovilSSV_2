@@ -9,8 +9,8 @@
         <div class="col-md-12 px-5">
         <form class="text-center"  action="">
             <label for="">Por favor digite la cedula</label>
-            <input class="form-control mt-3" type="text">
-            <input class="btn btn-primary mt-2" value="Consultar"  type="submit">
+            <input  class="form-control mt-3"  #cedula type="text">
+            <input class="btn btn-primary mt-2" value="Consultar" (click)="traerDatosAnulados(cedula.value)"  type="button">
 
         </form>
         </div>
@@ -19,7 +19,7 @@
     <div class="row">
         <div class="col-md-12">
         <h6>Cedula consultada</h6>
-        <p><!-- aqui va la fracción cuando se ingresa en el input --></p>
+        <p> {{cedula.value}} </p>
         </div>
     </div>
     <div class="row mt-4">
@@ -38,16 +38,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <tr *ngFor="let recorrer of inventarioAnuladosDelDia" >
+                            <td> {{recorrer}} </td>
                         </tr>
                         <tr>
                         <th scope="row">2</th>
