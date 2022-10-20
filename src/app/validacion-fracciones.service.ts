@@ -10,9 +10,9 @@ export class ValidacionFraccionesService {
   constructor(private http: HttpClient) { }
   
   //creo una funcion y en ella uso la variable anteriormente creada para obtener una url por el metodo get
-  cargarValidacionFracciones() {
+  cargarFracciones() {
     //retorno el json al archivo ts de validacion fracciones
-    return this.http.get("");
+    return this.http.get("https://pokeapi.co/api/v2/pokemon/ditto");
   }
 
 }
