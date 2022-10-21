@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PremioRaspaService } from '../premio-raspa.service';
 //Se importan las ayudas para el manejo del formulario
-import { FormBuilder, FormGroup, PatternValidator, Validators } from '@angular/forms';
-//Se importa la estructural del condicional
-import { NgIf } from '@angular/common';
+import { FormBuilder} from '@angular/forms';
 //importamos servicio de validación
 import { ValidacionesCedulaService } from '../validaciones-cedula.service';
 
