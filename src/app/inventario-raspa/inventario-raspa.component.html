@@ -10,6 +10,7 @@
           <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class=""  action="">
             <label for="">Por favor digite su cedula</label>
 
+
             <input (ngModelChange)="d(cedula.value)" formControlName="cedulavalidar" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} "  class="form-control mt-3" #cedula  type="text"> 
 
             <h6 class="condicion" > {{condicion}} </h6> 
