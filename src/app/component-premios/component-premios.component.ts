@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PremioRaspaService } from '../premio-raspa.service';
 import { FormBuilder, FormGroup, PatternValidator, Validators } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 
 @Component({
@@ -17,26 +18,37 @@ export class ComponentPremiosComponent implements OnInit {
   }
 
   myForm = this.fb.group({
-    cedulavalidar: ['', [Validators.required,  Validators.pattern("[0-9]")]]
+    cedulavalidar: ['', [Validators.required,  Validators.pattern('[0-9 ]*')]]
   })
   
   condicion: string = "";
-  cedula: string = "";
+  cedula2: string = "";
   savePremios: any[] = [];
 
-  onSubmit(cedula:string) {
+  onSubmit() {
     if (this.myForm.valid) {
       
       this.premiosRaspas.cargarPremiosRaspas().subscribe(premiosRaspa => {
       this.savePremios = Object.values(premiosRaspa);
         
-        this.cedula = cedula;
+        
+        this.condicion = "";
       
       });
 
     } else {
       console.log("faltan datos");
-      this.condicion = "Llene el campo";
+      this.condicion = "Por favor llene el campo con numeros";
+    }
+  }
+
+
+  cedula1(cedula:string){
+    if(this.myForm.valid){
+      this.cedula2 = cedula;
+    }
+    else{
+      this.cedula2 = "";
     }
   }
 
