@@ -9,7 +9,7 @@ export class AnuladosDelDIaService {
   constructor(private http: HttpClient) { }
   
   cargarAnuladosDelDia() {
-    return this.http.get("https://run.googleapis.com/$discovery/rest?version=v1");
+    return this.http.get("https://pokeapi.co/api/v2/pokemon/ditto");
   }
 
 

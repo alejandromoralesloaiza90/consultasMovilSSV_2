@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { InventarioLoteriaFisicaService } from '../inventario-loteria-fisica.service';
+//Se importan las ayudas para el manejo del formulario
+import { FormBuilder, FormGroup, PatternValidator, Validators } from '@angular/forms';
+//Se importa la estructural del condicional
+import { NgIf } from '@angular/common';
+//importamos servicio de validación
+import { ValidacionesCedulaService } from '../validaciones-cedula.service';
 
 @Component({
   selector: 'app-inventario-loteria-fisica',
@@ -8,19 +14,48 @@ import { InventarioLoteriaFisicaService } from '../inventario-loteria-fisica.ser
 })
 export class InventarioLoteriaFisicaComponent implements OnInit {
 
-  constructor(private loteriaFisica: InventarioLoteriaFisicaService) { }
+  constructor(private loteriaFisica: InventarioLoteriaFisicaService, private fb: FormBuilder, private vali: ValidacionesCedulaService) { }
 
   ngOnInit(): void {
+    this.myForm = this.vali.validarCedula();
   }
 
-  traerInventarioLoteriaFisica(cedula:string){
-    this.loteriaFisica.cartarInventarioLoteriaFisica().subscribe(loteriaFisica=>{
-      this.inventarioLoteriaFisica = Object.values(loteriaFisica);
-      this.cedula = cedula;
-    })
 
-  }
-  cedula:string="";
+  myForm: any;
+  
+  validacionRed: boolean = true;
+  condicion: string = "";
+  cedula2: string = "";
   inventarioLoteriaFisica: any[]=[];
+
+   //Se verifica la validación del formulario 
+   onSubmit() {
+
+    if (this.myForm.valid) {
+      
+      this.loteriaFisica.cartarInventarioLoteriaFisica().subscribe(loteriaFisica=>{
+      this.inventarioLoteriaFisica = Object.values(loteriaFisica);
+      this.condicion = "";
+      
+      });
+      this.validacionRed = true;
+    } else {
+
+      console.log("faltan datos");
+      this.condicion = "Por favor digite su cedula";
+      this.validacionRed = false;
+    }
+  }
+
+  //validamos los datos del formulario y llenamos la variable cedula
+  cedula1(cedula:string){
+    if(this.myForm.valid){
+      this.cedula2 = cedula;
+    }
+    else{
+      this.cedula2 = "";
+
+    }
+  }
 
 }

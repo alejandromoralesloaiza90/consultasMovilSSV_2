@@ -4,6 +4,7 @@ import { PremioRaspaService } from '../premio-raspa.service';
 import { FormBuilder, FormGroup, PatternValidator, Validators } from '@angular/forms';
 //Se importa la estructural del condicional
 import { NgIf } from '@angular/common';
+//importamos servicio de validación
 import { ValidacionesCedulaService } from '../validaciones-cedula.service';
 
 @Component({
@@ -34,12 +35,10 @@ export class ComponentPremiosComponent implements OnInit {
       
       this.premiosRaspas.cargarPremiosRaspas().subscribe(premiosRaspa => {
       this.savePremios = Object.values(premiosRaspa);
-        
-        
-        this.condicion = "";
+      this.condicion = "";
       
       });
-
+      this.validacionRed = true;
     } else {
 
       console.log("faltan datos");
