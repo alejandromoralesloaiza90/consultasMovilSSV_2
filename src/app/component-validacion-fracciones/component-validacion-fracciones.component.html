@@ -7,10 +7,11 @@
     <br>
     <div class="row">
         <div class="col-md-12 px-5">
-        <form class=""  action="">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class=""  action="">
             <label for="">Por favor escanee o digite la fraccion</label>
-            <input class="form-control mt-3" #fracciones type="text">
-            <input class="btn btn-primary mt-2" value="Consultar" (click)="traerFracciones(fracciones.value)" type="submit">
+            <input [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " placeholder="Ingrese el número de la fracción"  class="form-control mt-3  " #fraccion  formControlName="fraccionvalidar" type="text">
+            <h6 class="condicion" > {{condicion}} </h6>
+            <input class="btn btn-primary mt-2" value="Consultar" (click)="fracciones1(fraccion.value)" type="submit">
 
         </form>
         </div>
@@ -19,7 +20,7 @@
     <div class="row">
         <div class="col-md-12">
         <h6>Fracción consultada</h6>
-        <p>{{fracciones.value}}</p>
+        <p>{{fraccion2}}</p>
         </div>
     </div>
     <div class="row mt-4">

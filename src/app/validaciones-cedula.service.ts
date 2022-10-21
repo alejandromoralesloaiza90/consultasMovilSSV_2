@@ -11,17 +11,27 @@ export class ValidacionesCedulaService {
   myForm: any
 
   validarCedula() {
-    
     this.myForm = this.fb.group({
-      cedulavalidar: ['', [Validators.required, Validators.minLength(10), Validators.pattern('[0-9 ]*')]],
-      nameCedulaInventario: ['', [Validators.required, Validators.minLength(10), Validators.pattern('[0-9 ]*')]]
+      cedulavalidar: ['', [Validators.required, Validators.minLength(10), Validators.pattern('[0-9 ]*')]]
+    })
+    return this.myForm;
+  }
+
+  //funsión para validar la fracción
+  validarFraccion(){
+    this.myForm = this.fb.group({
+      fraccionvalidar: ['', [Validators.required, Validators.maxLength(20), Validators.pattern('[0-9 ]*')]]
     })
 
     return this.myForm;
-
   }
+  //función validar transacciones del día
+  validarTransaccionesDia(){
+    this.myForm = this.fb.group({
+      cedulavalidar: ['', [Validators.required, Validators.minLength(10), Validators.pattern('[0-9 ]*')]],
+      transaccionvalidar: ['', [Validators.required, Validators.pattern(/(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/)]]
+    })
 
-  
-
-
+    return this.myForm;
+  }
 }

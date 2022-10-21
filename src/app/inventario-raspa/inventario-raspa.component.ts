@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InventarioRaspaService } from '../inventario-raspa.service';
+//Se importan las ayudas para el manejo del formulario
+import { FormBuilder } from '@angular/forms';
 import { ValidacionesCedulaService } from '../validaciones-cedula.service';
 
 @Component({
@@ -9,7 +11,7 @@ import { ValidacionesCedulaService } from '../validaciones-cedula.service';
 })
 export class InventarioRaspaComponent implements OnInit {
 
-  constructor(private raspas:InventarioRaspaService, private vali:ValidacionesCedulaService ) { }
+  constructor(private raspas:InventarioRaspaService, private fb: FormBuilder, private vali:ValidacionesCedulaService ) { }
 
   ngOnInit(): void {
     this.myForm = this.vali.validarCedula();
