@@ -9,10 +9,11 @@ export class InventarioRaspaService {
 
   constructor(private httpClient: HttpClient) { }
   
-  cargarRaspas() {
-    return this.httpClient.get("https://pokeapi.co/api/v2/pokemon/ditto");
-  }
+  url: string = "http://localhost/pruebaPHP/";
 
+  cargarRaspas() {
+    return this.httpClient.get("http://localhost/pruebaPHP/databaseConect.php");
+  }
 
 
 }

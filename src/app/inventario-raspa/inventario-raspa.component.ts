@@ -26,6 +26,7 @@ export class InventarioRaspaComponent implements OnInit {
     if (this.myForm.valid) {
       
       this.raspas.cargarRaspas().subscribe(premiosRaspa => {
+        console.log(premiosRaspa);
       this.inventarioRaspas = Object.values(premiosRaspa);
       this.condicion = "";
       
@@ -49,7 +50,14 @@ export class InventarioRaspaComponent implements OnInit {
     }
   }
   
-
+  d(cedula:string) {
+    if (cedula=="") {
+      this.validacionRed = true;
+      this.condicion = "";
+    } else {
+      console.log("tiene datos");
+    }
+  }
   
 
 }
