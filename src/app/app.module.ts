@@ -17,8 +17,9 @@ import { TransaccionesDelDiaComponent } from './transacciones-del-dia/transaccio
 import { ConsultaPremiosComponent } from './consulta-premios/consulta-premios.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PremioRaspaService } from './premio-raspa.service';
-import { FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule } from '@angular/forms';
 import { ValidacionFraccionesService } from './validacion-fracciones.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 const appRoutes: Routes = [
@@ -52,7 +53,9 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
+    
   ],
   providers: [
     InventarioRaspaComponent,
