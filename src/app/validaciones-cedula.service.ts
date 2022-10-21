@@ -13,7 +13,8 @@ export class ValidacionesCedulaService {
   validarCedula() {
     
     this.myForm = this.fb.group({
-      cedulavalidar: ['', [Validators.required, Validators.minLength(10),  Validators.pattern('[0-9 ]*')]]
+      cedulavalidar: ['', [Validators.required, Validators.minLength(10), Validators.pattern('[0-9 ]*')]],
+      nameCedulaInventario: ['', [Validators.required, Validators.minLength(10), Validators.pattern('[0-9 ]*')]]
     })
 
     return this.myForm;

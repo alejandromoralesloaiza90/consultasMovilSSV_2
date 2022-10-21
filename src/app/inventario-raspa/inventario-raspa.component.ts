@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InventarioRaspaService } from '../inventario-raspa.service';
+import { ValidacionesCedulaService } from '../validaciones-cedula.service';
 
 @Component({
   selector: 'app-inventario-raspa',
@@ -8,27 +9,46 @@ import { InventarioRaspaService } from '../inventario-raspa.service';
 })
 export class InventarioRaspaComponent implements OnInit {
 
-  constructor(private raspas:InventarioRaspaService) { }
+  constructor(private raspas:InventarioRaspaService, private vali:ValidacionesCedulaService ) { }
 
   ngOnInit(): void {
-
+    this.myForm = this.vali.validarCedula();
   }
 
-  //creo una funcion la cual obtiene el json del servicio inventarioRaspa
-  traerDatosRaspa(cedula: string) {
-    //llamo a la funcion del servicio y uso la funcion subscribe para crear un observable 
-    this.raspas.cargarRaspas().subscribe(raspa => {
-      //creo una variable la cual guardara la data del observable en formato object, para usarse en el html y mostrar los datos
-      this.inventarioRaspas = Object.values(raspa);
-      console.log(this.inventarioRaspas);
-
-      this.cedula = cedula;
-
-    })
-  }
-
-  cedula: string = "";
+  myForm: any;
+  validacionRed: boolean = true;
+  condicion: string = "";
   inventarioRaspas: any[] = [];
+  cedulaInventario: string = "";
+
+  onSubmit() {
+
+    if (this.myForm.valid) {
+      
+      this.raspas.cargarRaspas().subscribe(premiosRaspa => {
+      this.inventarioRaspas = Object.values(premiosRaspa);
+      this.condicion = "";
+      
+      });
+      this.validacionRed = true;
+    } else {
+
+      console.log("faltan datos");
+      this.condicion = "Por favor digite su cedula";
+      this.validacionRed = false;
+    }
+  }
+
+  inventarioRaspa(cedula:string){
+    if(this.myForm.valid){
+      this.cedulaInventario = cedula;
+    }
+    else{
+      this.cedulaInventario = "";
+
+    }
+  }
+  
 
   
 
