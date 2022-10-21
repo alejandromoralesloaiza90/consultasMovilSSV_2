@@ -20,6 +20,7 @@ import { PremioRaspaService } from './premio-raspa.service';
 import { FormGroup, FormsModule } from '@angular/forms';
 import { ValidacionFraccionesService } from './validacion-fracciones.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ValidacionesCedulaService } from './validaciones-cedula.service';
 
 
 const appRoutes: Routes = [
@@ -60,7 +61,8 @@ const appRoutes: Routes = [
   providers: [
     InventarioRaspaComponent,
     PremioRaspaService,
-    ValidacionFraccionesService,
+    ValidacionFraccionesService, 
+    ValidacionesCedulaService
     
   ],
     
