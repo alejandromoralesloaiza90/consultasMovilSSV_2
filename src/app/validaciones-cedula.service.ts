@@ -12,9 +12,6 @@ export class ValidacionesCedulaService {
 
   validarCedula() {
     this.myForm = this.fb.group({
-<<<<<<< HEAD
-      cedulavalidar: ['', [Validators.required,  Validators.pattern('[0-9 ]*')]],
-=======
       cedulavalidar: ['', [Validators.required, Validators.minLength(10), Validators.pattern('[0-9 ]*')]]
     })
     return this.myForm;
@@ -24,7 +21,6 @@ export class ValidacionesCedulaService {
   validarFraccion(){
     this.myForm = this.fb.group({
       fraccionvalidar: ['', [Validators.required, Validators.maxLength(20), Validators.pattern('[0-9 ]*')]]
->>>>>>> 618b891fd7372c1d985125423bcb64ff7b0ec384
     })
 
     return this.myForm;
