@@ -14,16 +14,13 @@ import { ValidacionesCedulaService } from '../validaciones-cedula.service';
 
 export class ComponentPremiosComponent implements OnInit {
 
-  constructor(private premiosRaspas: PremioRaspaService, public fb: FormBuilder) { }
+  constructor(private premiosRaspas: PremioRaspaService, public fb: FormBuilder , private vali:ValidacionesCedulaService) { }
 
   ngOnInit(): void {
+    this.myForm = this.vali.validarCedula();
   }
 
-  myForm = this.fb.group({
-
-    cedulavalidar: ['', [Validators.required,  Validators.pattern('[0-9 ]*')]]
-
-  })
+  myForm: any;
   
   validacionRed: boolean = true;
   condicion: string = "";
