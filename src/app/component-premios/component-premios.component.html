@@ -7,10 +7,12 @@
     <br>
     <div class="row">
         <div class="col-md-12 px-5">
-        <form [formGroup]="myForm" (ngSubmit)="onSubmit(cedula.value)"  class=""  action="">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()"  class=""  action="">
             <label for="">Por favor digite la cedula</label>
             <input class="form-control mt-3" #cedula  formControlName="cedulavalidar" required type="text">
-            <input class="btn btn-primary mt-2" value="Consultar"   type="submit">
+
+            <h6> {{condicion}} </h6>
+            <input class="btn btn-primary mt-2" value="Consultar" (click)="cedula1(cedula.value)"  type="submit">
 
         </form>
         </div>
@@ -19,7 +21,7 @@
     <div class="row">
         <div class="col-md-12">
         <h6>Cedula consultada</h6>
-        <p> {{cedula.value}} </p>
+        <p> {{cedula2}} </p>
         </div>
     </div>
 
