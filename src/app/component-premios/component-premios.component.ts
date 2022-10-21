@@ -17,7 +17,7 @@ export class ComponentPremiosComponent implements OnInit {
   }
 
   myForm = this.fb.group({
-    cedulavalidar: ['', [Validators.required,  Validators.pattern("[0-9]")]]
+    cedulavalidar: ['', [Validators.required, Validators.minLength(10), Validators.pattern("[0-9]")]]
   })
   
   condicion: string = "";
@@ -35,8 +35,7 @@ export class ComponentPremiosComponent implements OnInit {
       });
 
     } else {
-      console.log("faltan datos");
-      this.condicion = "Llene el campo";
+      
     }
   }
 
