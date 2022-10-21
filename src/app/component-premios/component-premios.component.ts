@@ -18,14 +18,17 @@ export class ComponentPremiosComponent implements OnInit {
   constructor(private premiosRaspas: PremioRaspaService, public fb: FormBuilder) { }
 
   ngOnInit(): void {
-
   }
   //Se obtiene los objetos del fomulario y se validan
   myForm = this.fb.group({
+
     cedulavalidar: ['', [Validators.required,  Validators.pattern('[0-9 ]*')]]
+
   })
   
+
   //se crean las variables de almacenamiento
+  validacionRed: boolean = true;
   condicion: string = "";
   cedula2: string = "";
   savePremios: any[] = [];
@@ -41,8 +44,10 @@ export class ComponentPremiosComponent implements OnInit {
       });
 
     } else {
+
       console.log("faltan datos");
       this.condicion = "Por favor llene el campo con numeros";
+      this.validacionRed = false;
     }
   }
 
@@ -53,6 +58,7 @@ export class ComponentPremiosComponent implements OnInit {
     }
     else{
       this.cedula2 = "";
+
     }
   }
 
