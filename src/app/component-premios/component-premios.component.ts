@@ -14,7 +14,6 @@ export class ComponentPremiosComponent implements OnInit {
   constructor(private premiosRaspas: PremioRaspaService, public fb: FormBuilder) { }
 
   ngOnInit(): void {
-
   }
 
   myForm = this.fb.group({
@@ -23,6 +22,7 @@ export class ComponentPremiosComponent implements OnInit {
 
   })
   
+  validacionRed: boolean = true;
   condicion: string = "";
   cedula2: string = "";
   savePremios: any[] = [];
@@ -42,6 +42,7 @@ export class ComponentPremiosComponent implements OnInit {
 
       console.log("faltan datos");
       this.condicion = "Por favor llene el campo con numeros";
+      this.validacionRed = false;
     }
   }
 
