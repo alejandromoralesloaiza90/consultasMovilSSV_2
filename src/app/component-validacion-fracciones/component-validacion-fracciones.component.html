@@ -26,7 +26,13 @@
         <p> {{consultasFracciones[0][1]}} </p> 
 
         <h6>PAQUETE</h6>
-        <p> {{consultasFracciones[0][9]}} </p> 
+        <p> {{consultasFracciones[0][9]}} </p>
+
+        <h6>PRODUCTO</h6>
+        <p> {{consultasFracciones[0][0]}} </p>
+
+        <h6>FECHA VENTA</h6>
+        <p> {{consultasFracciones[0][6]}} </p> 
         
         </div>
     </div>
@@ -36,24 +42,20 @@
                 <table class="table">
                     <thead>
                         <tr>
-                        <th scope="col">PRODUCTO</th>
                         <th scope="col">NUMERO</th>
                         <th scope="col">SERIE</th>
                         <th scope="col">FRACCION</th>
                         <th scope="col">ESTADO</th>
-                        <th scope="col">FECHA VENTA</th>
                         <th scope="col">HORA VENTA</th>
                         <th scope="col">PAGADO</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let fraccion of consultasFracciones">
-                            <td>{{fraccion[0]}}</td>
                             <td>{{fraccion[2]}}</td>
                             <td>{{fraccion[3]}}</td>
                             <td>{{fraccion[4]}}</td>
                             <td>{{fraccion[5]}}</td>
-                            <td>{{fraccion[6]}}</td>
                             <td>{{fraccion[7]}}</td>
                             <td>{{fraccion[10]}}</td>
                             
