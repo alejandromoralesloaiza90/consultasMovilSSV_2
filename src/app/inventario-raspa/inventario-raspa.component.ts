@@ -52,7 +52,7 @@ export class InventarioRaspaComponent implements OnInit {
     }
   }
   
-  d(cedula:string) {
+  quitarMensajesError(cedula:string) {
     if (cedula=="") {
       this.validacionRed = true;
       this.condicion = "";

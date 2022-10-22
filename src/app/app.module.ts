@@ -12,7 +12,6 @@ import { FooterComponent } from './footer/footer.component';
 
 
 import { InventarioLoteriaFisicaComponent } from './inventario-loteria-fisica/inventario-loteria-fisica.component';
-import { AnuladosDelDiaComponent } from './anulados-del-dia/anulados-del-dia.component';
 import { TransaccionesDelDiaComponent } from './transacciones-del-dia/transacciones-del-dia.component';
 import { ConsultaPremiosComponent } from './consulta-premios/consulta-premios.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,6 +20,8 @@ import { FormGroup, FormsModule } from '@angular/forms';
 import { ValidacionFraccionesService } from './validacion-fracciones.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ValidacionesCedulaService } from './validaciones-cedula.service';
+import { FraccionesProcesoDevolucionComponent } from './fracciones-proceso-devolucion/fracciones-proceso-devolucion.component';
+import { DevolucionFraccionesService } from './devolucion-fracciones.service';
 
 
 const appRoutes: Routes = [
@@ -28,10 +29,10 @@ const appRoutes: Routes = [
   { path: 'premiosRaspa', component: ComponentPremiosComponent },
   { path: 'inventarioRaspa', component: InventarioRaspaComponent},
   { path: 'validacionFracciones', component: ComponentValidacionFraccionesComponent},
-  { path: 'inventarioLoteriaFisica', component: InventarioLoteriaFisicaComponent},
-  { path: 'anuladosDelDia', component: AnuladosDelDiaComponent},
+  { path: 'inventarioLoteriaFisica', component: InventarioLoteriaFisicaComponent },
   { path: 'transaccionesDelDia', component: TransaccionesDelDiaComponent},
-  { path: 'consultaPremios', component: ConsultaPremiosComponent},
+  { path: 'consultaPremios', component: ConsultaPremiosComponent },
+  { path: 'devolucionFracciones', component: FraccionesProcesoDevolucionComponent},
 
 ];
 
@@ -46,9 +47,9 @@ const appRoutes: Routes = [
     InventarioRaspaComponent,
     FooterComponent,
     InventarioLoteriaFisicaComponent,
-    AnuladosDelDiaComponent,
     TransaccionesDelDiaComponent,
     ConsultaPremiosComponent,
+    FraccionesProcesoDevolucionComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +63,8 @@ const appRoutes: Routes = [
     InventarioRaspaComponent,
     PremioRaspaService,
     ValidacionFraccionesService, 
-    ValidacionesCedulaService
+    ValidacionesCedulaService,
+    DevolucionFraccionesService
     
   ],
     
