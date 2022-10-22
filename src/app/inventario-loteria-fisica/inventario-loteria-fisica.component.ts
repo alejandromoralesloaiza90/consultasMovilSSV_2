@@ -58,4 +58,16 @@ export class InventarioLoteriaFisicaComponent implements OnInit {
     }
   }
 
+  quitarMensajesError(cedula:string) {
+
+    if (cedula=="") {
+      this.validacionRed = true;
+      this.condicion = "";
+    } else {
+      console.log("tiene datos");
+    }
+
+
+  }
+
 }
