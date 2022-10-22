@@ -1,5 +1,77 @@
-<h1>hola</h1>
+<div class="container-fluid">
+    <div class="row mt-5 text-center">
+        <div class="col-md-12">
+        <h5>Fracciones en proceso de devolucion</h5>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12 px-5">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()"  class=""  action="">
+            <label for="">Por favor digite la cedula</label>
+            <input formControlName="cedulavalidar" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} "  placeholder="Ingrese su numero de cedula"  class="form-control mt-3  " #cedula  type="text">
 
+            <h6 class="condicion" > {{condicion}}  </h6>
+            <input class="btn btn-primary mt-2" (click)="cedula1(cedula.value)" value="Consultar" type="submit">
+
+        </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+        <h6>Cedula consultada</h6>
+        <p> {{cedula2}}  </p>
+        </div>
+    </div>
+
+
+    <div class="row  mt-3">
+        <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">ID</th>
+                <th scope="col">FECHAPAGO</th>
+                <th scope="col">HORAPAGO</th>
+                <th scope="col">CAJERO</th>
+                <th scope="col">CODIGOVENTA</th>
+                <th scope="col">TOTALPREMIO</th>
+                <th scope="col">RECAMBIO</th>
+                <th scope="col">ACUMULADO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let recorrer of devolucionFracciones" >
+                
+                    <td> {{recorrer}} </td>
+                    
+                </tr>
+                <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                </tr>
+                <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        
+        </div>
+    </div>
+
+</div>
 
 
 <app-footer></app-footer>
