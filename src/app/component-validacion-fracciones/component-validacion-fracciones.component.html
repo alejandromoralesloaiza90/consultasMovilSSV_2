@@ -7,7 +7,7 @@
     <br>
     <div class="row">
         <div class="col-md-12 px-5">
-        <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class=""  action="">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(fraccion.value)" class=""  action="">
             <label for="">Por favor escanee o digite la fraccion</label>
             <input (ngModelChange)="quitarMensajesError(fraccion.value)" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " placeholder="Ingrese el número de la fracción"  class="form-control mt-3  " #fraccion  formControlName="fraccionvalidar" type="text">
             <h6 class="condicion" > {{condicion}} </h6>
@@ -17,10 +17,17 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-4 ">
         <div class="col-md-12">
-        <h6>Fracción consultada</h6>
+        <h6>FRACCION CONSULTADA</h6>
         <p>{{fraccion2}}</p>
+
+        <h6>CEDULA Y NOMBRE BODEGA</h6>
+        <p> {{consultasFracciones[0][1]}} </p> 
+
+        <h6>PAQUETE</h6>
+        <p> {{consultasFracciones[0][9]}} </p> 
+        
         </div>
     </div>
     <div class="row mt-4">
@@ -30,44 +37,26 @@
                     <thead>
                         <tr>
                         <th scope="col">PRODUCTO</th>
-                        <th scope="col">BODEGA</th>
                         <th scope="col">NUMERO</th>
                         <th scope="col">SERIE</th>
                         <th scope="col">FRACCION</th>
                         <th scope="col">ESTADO</th>
                         <th scope="col">FECHA VENTA</th>
                         <th scope="col">HORA VENTA</th>
-                        <th scope="col">VENDEDOR</th>
                         <th scope="col">PAGADO</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let fraccion of consultasFracciones">
-                            <th>{{fraccion.name}}</th>
-                        </tr>
-                        <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
+                            <td>{{fraccion[0]}}</td>
+                            <td>{{fraccion[2]}}</td>
+                            <td>{{fraccion[3]}}</td>
+                            <td>{{fraccion[4]}}</td>
+                            <td>{{fraccion[5]}}</td>
+                            <td>{{fraccion[6]}}</td>
+                            <td>{{fraccion[7]}}</td>
+                            <td>{{fraccion[10]}}</td>
+                            
                         </tr>
                     </tbody>
                 </table>

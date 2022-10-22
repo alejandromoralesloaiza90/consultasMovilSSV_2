@@ -19,34 +19,44 @@ export class ComponentValidacionFraccionesComponent implements OnInit {
   }
 
   myForm: any;
+  
 
+
+  
   validacionRed: boolean = true;
   condicion: string = "";
   fraccion2:string="";
   consultasFracciones: any[] = [];
   //Se verifica la validación del formulario 
-  onSubmit() {
-
+  onSubmit(fraccionColocador:string) {
+    
     if (this.myForm.valid) {
       
-      this.fracciones.cargarFracciones().subscribe(fracciones=>{
+      this.fracciones.cargarFracciones(fraccionColocador).subscribe(fracciones=>{
       this.consultasFracciones = Object.values(fracciones);
-      this.condicion = "";
+        this.condicion = "";
+        
       
       });
       this.validacionRed = true;
+      
     } else {
 
       console.log("faltan datos");
       this.condicion = "Por favor digite el número de la fracción";
       this.validacionRed = false;
     }
+    
   }
 
   //validamos los datos del formulario y llenamos la variable cedula
-  fracciones1(cedula:string){
+  fracciones1(cedula: string) {
+    
+    
+
     if(this.myForm.valid){
       this.fraccion2 = cedula;
+      
     }
     else{
       this.fraccion2 = "";

@@ -59,8 +59,8 @@ export class ConsultaPremiosComponent implements OnInit {
   }
 
   //validamos los mensajes de error  al borrar lo escrito en el input
-  quitarMensajesError(serie:string) {
-    if (serie=="")  {
+  quitarMensajesError(serie:string , numero:string ) {
+    if (serie=="" && numero=="" )  {
       this.validacionRed = true;
       this.condicion = "";
     } else {
