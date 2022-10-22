@@ -18,29 +18,21 @@ export class ConsultaPremiosComponent implements OnInit {
     this.myForm=this.vali.validarSerie();
   }
 
-  traerConsultasPremio(serie:any, numero:any){
-    this.premio.cargarConsultaPremios().subscribe(premio=> {
-      this.consultasPremio = Object.values(premio);
-      this.numero =numero;
-      this.serie=serie;
-    })
-
-  }
+  
   myForm: any;
 
   validacionRed: boolean = true;
   condicion: string = "";
-  fraccion2:string="";
-  serie:any="";
-  numero:any="";
+  serie2:any="";
+  numero2:any="";
   consultasPremio: any[]=[];
   //Se verifica la validación del formulario 
   onSubmit() {
 
     if (this.myForm.valid) {
       
-      this.premio.cargarConsultaPremios().subscribe(consultPremio=>{
-      this.consultasPremio= Object.values(consultPremio);
+      this.premio.cargarConsultaPremios().subscribe(premio=> {
+        this.consultasPremio = Object.values(premio);
       this.condicion = "";
       
       });
@@ -48,19 +40,31 @@ export class ConsultaPremiosComponent implements OnInit {
     } else {
 
       console.log("faltan datos");
-      this.condicion = "Por favor verifique la serie y ";
+      this.condicion = "Por favor verifique la serie o el numero";
       this.validacionRed = false;
     }
   }
 
   //validamos los datos del formulario y llenamos la variable cedula
-  fracciones1(cedula:string){
+  premios1(serie:string, numero:string){
     if(this.myForm.valid){
-      this.fraccion2 = cedula;
+      this.numero2 =numero;
+      this.serie2=serie;
     }
     else{
-      this.fraccion2 = "";
+      this.numero2 ="";
+      this.serie2="";
 
+    }
+  }
+
+  //validamos los mensajes de error  al borrar lo escrito en el input
+  quitarMensajesError(serie:string) {
+    if (serie=="")  {
+      this.validacionRed = true;
+      this.condicion = "";
+    } else {
+      console.log("tiene datos");
     }
   }
 }
