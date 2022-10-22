@@ -9,18 +9,16 @@ export class ValidacionesCedulaService {
   constructor(public fb: FormBuilder) { }
 
   myForm: any
-
+  
+  // función validar cedula
   validarCedula() {
     this.myForm = this.fb.group({
-
-
-      
-      cedulavalidar: ['', [Validators.required, Validators.minLength(10), Validators.pattern('[0-9 ]*')]]
+      cedulavalidar: ['', [Validators.required, Validators.maxLength(10), Validators.pattern('[0-9 ]*')]]
     })
     return this.myForm;
   }
 
-  //funsión para validar la fracción
+  //función para validar la fracción
   validarFraccion(){
     this.myForm = this.fb.group({
       fraccionvalidar: ['', [Validators.required, Validators.maxLength(20), Validators.pattern('[0-9 ]*')]]
@@ -32,7 +30,7 @@ export class ValidacionesCedulaService {
   //función validar transacciones del día
   validarTransaccionesDia(){
     this.myForm = this.fb.group({
-      cedulavalidar: ['', [Validators.required, Validators.minLength(10), Validators.pattern('[0-9 ]*')]],
+      cedulavalidar: ['', [Validators.required, Validators.maxLength(10), Validators.pattern('[0-9 ]*')]],
       transaccionvalidar: ['', [Validators.required, Validators.pattern(/(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/)]]
     })
 
@@ -41,8 +39,8 @@ export class ValidacionesCedulaService {
   //función validar transacciones del día
   validarSerie(){
     this.myForm = this.fb.group({
-      serie: ['', [Validators.required, Validators.minLength(10), Validators.pattern('[0-9 ]*')]],
-      transaccionvalidar: ['', [Validators.required, Validators.pattern(/(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/)]]
+      serie: ['', [Validators.required, Validators.maxLength(3), Validators.pattern('[0-9 ]*')]],
+      numero: ['', [Validators.required, Validators.maxLength(15), Validators.pattern('[0-9 ]*')]]
     })
 
     return this.myForm;

@@ -7,12 +7,13 @@
     <br>
     <div class="row">
         <div class="col-md-12 px-5">
-        <form [formGroup]="form" class=""  action="">
-            <label for="">Por favor digite la serie</label>
-            <input class="form-control mt-3" class="input"  formControlName="serie" type="text"><br>
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <label for="">Por favor digite la serie</label><br>
+            <input class="form-control mt-3" (ngModelChange)="quitarMensajesError(serie.value)" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " placeholder="Ingrese la serie"  class="form-control mt-3  " #serie formControlName="serie" type="text"><br>
             <label for="">Digite el número</label>
-            <input class="form-control mt-3" type="text"><br>
-            <input class="btn btn-primary mt-2" value="Consultar" (click)="traerConsultasPremio(serie.value,numero.value)" type="submit">
+            <input class="form-control mt-3" (ngModelChange)="quitarMensajesError(serie.value)" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " placeholder="Ingrese el número"  class="form-control mt-3  " #numero formControlName="numero" type="text"><br>
+            <h6 class="condicion" > {{condicion}} </h6>
+            <input class="btn btn-primary mt-2" value="Consultar" (click)="premios1(serie.value,numero.value)" type="submit">
 
         </form>
         </div>
@@ -21,9 +22,9 @@
     <div class="row">
         <div class="col-md-12">
         <h6>Serie consultada: </h6>
-        <p>{{serie.value}}</p>
+        <p>{{serie2}}</p>
         <h6>Número consultada: </h6>
-        <p>{{numero.value}}</p>
+        <p>{{numero2}}</p>
         </div>
     </div>
 
