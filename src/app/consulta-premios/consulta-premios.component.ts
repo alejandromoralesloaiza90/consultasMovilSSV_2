@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ConsultaPremiosService } from '../consulta-premios.service';
+//Se importan las ayudas para el manejo del formulario
+import { FormBuilder, FormGroup, FormControl, Validator} from '@angular/forms';
+//importamos servicio de validación
+import { ValidacionesCedulaService } from '../validaciones-cedula.service';
+// importamos servicio para el manejo del tiempo
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-consulta-premios',
@@ -8,6 +14,8 @@ import { ConsultaPremiosService } from '../consulta-premios.service';
 })
 export class ConsultaPremiosComponent implements OnInit {
 
+  form!: FormGroup;
+  
   constructor(private premio:ConsultaPremiosService) { }
 
   ngOnInit(): void {
@@ -21,6 +29,8 @@ export class ConsultaPremiosComponent implements OnInit {
     })
 
   }
+  
+  myForm:any[]=[];
   serie:any="";
   numero:any="";
   consultasPremio: any[]=[];

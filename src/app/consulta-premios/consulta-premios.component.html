@@ -7,11 +7,11 @@
     <br>
     <div class="row">
         <div class="col-md-12 px-5">
-        <form class=""  action="">
+        <form [formGroup]="form" class=""  action="">
             <label for="">Por favor digite la serie</label>
-            <input class="form-control mt-3" #serie type="text"><br>
+            <input class="form-control mt-3" class="input" [class.is-danger]="myForm.get('serie').dirty && myForm.get('serie').invalid" formControlName="serie" type="text"><br>
             <label for="">Digite el número</label>
-            <input class="form-control mt-3" #numero type="text"><br>
+            <input class="form-control mt-3" type="text"><br>
             <input class="btn btn-primary mt-2" value="Consultar" (click)="traerConsultasPremio(serie.value,numero.value)" type="submit">
 
         </form>
