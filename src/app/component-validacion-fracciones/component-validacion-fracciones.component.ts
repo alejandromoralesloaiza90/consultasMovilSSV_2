@@ -51,9 +51,6 @@ export class ComponentValidacionFraccionesComponent implements OnInit {
 
   //validamos los datos del formulario y llenamos la variable cedula
   fracciones1(cedula: string) {
-    
-    
-
     if(this.myForm.valid){
       this.fraccion2 = cedula;
       
