@@ -15,42 +15,51 @@ export class ComponentValidacionFraccionesComponent implements OnInit {
   constructor(private fracciones:ValidacionFraccionesService, public fb: FormBuilder , private vali:ValidacionesCedulaService) { }
 
   ngOnInit(): void {
+    this.ocultarTexto = false;
     this.myForm=this.vali.validarFraccion();
   }
 
   myForm: any;
   
-
-
-  
+  mostrarTabla:boolean = true;
+  cargando: boolean = false;
+  ocultarTexto:boolean = false;
   validacionRed: boolean = true;
   condicion: string = "";
   fraccion2:string="";
   consultasFracciones: any[] = [];
   //Se verifica la validación del formulario 
-  onSubmit(fraccionColocador:string) {
+  onSubmit(fraccionColocador: string) {
+
+    if (fraccionColocador.length>19) {
+      this.cargando = true;
+    }
+
     
     if (this.myForm.valid) {
-      
       this.fracciones.cargarFracciones(fraccionColocador).subscribe(fracciones=>{
       this.consultasFracciones = Object.values(fracciones);
         this.condicion = "";
-        
-      
-      });
+        this.ocultarTexto = true;
+        this.cargando = false;
+        this.mostrarTabla = true;
+      })
       this.validacionRed = true;
       
     } else {
-
+      this.consultasFracciones = [];
       console.log("faltan datos");
       this.condicion = "Por favor digite el número de la fracción";
       this.validacionRed = false;
     }
     
+    
+
   }
 
   //validamos los datos del formulario y llenamos la variable cedula
   fracciones1(cedula: string) {
+    
     if(this.myForm.valid){
       this.fraccion2 = cedula;
       
@@ -62,7 +71,11 @@ export class ComponentValidacionFraccionesComponent implements OnInit {
   }
 
   quitarMensajesError(cedula:string) {
-    if (cedula=="") {
+    if (cedula == "" || cedula.length <= 19) {
+      this.mostrarTabla = false;
+      this.ocultarTexto = false;
+      this.consultasFracciones = [""];
+      console.log("hola");
       this.validacionRed = true;
       this.condicion = "";
     } else {

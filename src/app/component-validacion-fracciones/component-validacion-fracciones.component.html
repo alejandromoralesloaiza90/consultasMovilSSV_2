@@ -19,27 +19,30 @@
 
     <div class="row mt-4 ">
         <div class="col-md-12">
-        <h6>FRACCION CONSULTADA</h6>
-        <p>{{fraccion2}}</p>
 
-        <h6>CEDULA Y NOMBRE BODEGA</h6>
+        <h6  *ngIf="cargando" >CARGANDO INFORMACIÓN, POR FAVOR ESPERE</h6>
+
+        <h6  *ngIf="ocultarTexto" >FRACCION CONSULTADA</h6>
+        <p *ngIf="ocultarTexto" >{{fraccion2}}</p>
+
+        <h6 *ngIf="ocultarTexto" >CEDULA Y NOMBRE BODEGA</h6>
         <p> {{consultasFracciones[0][1]}} </p> 
 
-        <h6>PAQUETE</h6>
+        <h6 *ngIf="ocultarTexto" >PAQUETE</h6>
         <p> {{consultasFracciones[0][9]}} </p>
 
-        <h6>PRODUCTO</h6>
+        <h6 *ngIf="ocultarTexto" >PRODUCTO</h6>
         <p> {{consultasFracciones[0][0]}} </p>
 
-        <h6>FECHA VENTA</h6>
-        <p> {{consultasFracciones[0][6].substr(0,10)}}</p> 
+        <h6 *ngIf="ocultarTexto" >FECHA VENTA</h6>
+        <p *ngIf="ocultarTexto" > {{consultasFracciones[0][6].substr(0,10)}}</p> 
         
         </div>
     </div>
     <div class="row mt-4">
         <div class="col-md-12">
             <div class="table-responsive">
-                <table class="table">
+                <table  class="table">
                     <thead>
                         <tr>
                         <th scope="col">NUMERO</th>
@@ -50,7 +53,7 @@
                         <th scope="col">PAGADO</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody *ngIf="mostrarTabla" >
                         <tr *ngFor="let fraccion of consultasFracciones">
                             <td>{{fraccion[2]}}</td>
                             <td>{{fraccion[3]}}</td>
