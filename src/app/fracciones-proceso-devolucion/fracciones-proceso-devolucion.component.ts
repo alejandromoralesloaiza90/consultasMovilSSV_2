@@ -42,7 +42,7 @@ export class FraccionesProcesoDevolucionComponent implements OnInit {
       }
       //Consultar fracciones devolución
       this.devolucion.devolucionFracciones(fraccion).subscribe(devolucion => {
-      this.devolucionFracciones = Object.values(devolucion);
+        this.devolucionFracciones = Object.values(devolucion);
         this.condicion = "";
         this.ocultarTexto = true;
         this.cargando = false;
@@ -55,7 +55,7 @@ export class FraccionesProcesoDevolucionComponent implements OnInit {
     }
   }
   //Mostrar cedula fracción devolución consultada
-  cedula1(fraccionDevolucion:string){
+  fraccion1(fraccionDevolucion:string){
     if(this.myForm.valid){
       this.fraccionDevolucion2 = fraccionDevolucion;
     }
