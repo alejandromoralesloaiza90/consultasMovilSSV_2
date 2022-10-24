@@ -34,6 +34,7 @@ export class ConsultaPremiosComponent implements OnInit {
 
     if(serie.length<=3 && numero.length<=15){
       this.cargando=true;
+      this.ocultarTexto=false;
     }
     if (this.myForm.valid) {
       

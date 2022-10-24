@@ -26,6 +26,7 @@ export class InventarioRaspaComponent implements OnInit {
   condicion: string = "";
   inventarioRaspas: any[] = [];
   cedulaInventario: string = "";
+  page: number = 1;
 
   onSubmit(cedulas:string) {
 
