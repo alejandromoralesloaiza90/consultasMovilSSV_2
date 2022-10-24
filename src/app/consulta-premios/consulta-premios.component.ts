@@ -28,6 +28,7 @@ export class ConsultaPremiosComponent implements OnInit {
   serie2:any="";
   numero2:any="";
   consultasPremio: any[]=[];
+  page: number = 1;
 
   //Se verifica la validación del formulario 
   onSubmit(serie:string, numero:string) {

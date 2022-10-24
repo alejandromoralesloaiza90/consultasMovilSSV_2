@@ -42,7 +42,7 @@
                 </tr>
             </thead>
             <tbody *ngIf="mostrarTabla">
-                <tr *ngFor="let fracciones of consultasPremio">
+                <tr *ngFor="let fracciones of consultasPremio | paginate: { itemsPerPage: 5, currentPage: page }">
                     <td>{{fracciones[2]}}</td>
                     <td>{{fracciones[3].substr(0,10)}}</td>
                     <td>{{fracciones[4]}}</td>
@@ -51,7 +51,7 @@
             </tbody>
             </table>
         </div>
-        
+        <pagination-controls (pageChange)="page = $event"></pagination-controls>
         </div>
     </div>
 
