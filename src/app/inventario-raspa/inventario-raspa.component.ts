@@ -18,7 +18,6 @@ export class InventarioRaspaComponent implements OnInit {
   }
 
   //se inicializan las variables
-  mostrarTabla:boolean = true;
   cargando: boolean = false;
   ocultarTexto:boolean = false;
   myForm: any;
@@ -39,42 +38,32 @@ export class InventarioRaspaComponent implements OnInit {
         
         if (this.inventarioRaspas.length==0) {
           this.condicion = "no existen registros con ese numero de cedula";
-          this.validacionRed = true;
+          this.validacionRed = false;
           this.cedulaInventario = "";
+          this.cargando = false;
         } else {
           this.cedulaInventario = cedulas;
-          this.mostrarTabla = true;
           this.cargando = false;
           this.ocultarTexto = true;
         }
         
-        
-        
       });
       
     } else {
-
-
       this.condicion = "Por favor digite su cedula";
       this.validacionRed = false;
     }
   }
 
-
-
   quitarMensajesError(cedula:string) {
-    if (cedula=="") {
-      
+    if (cedula.length==0) {
+      this.inventarioRaspas = [];
+      this.cedulaInventario = "";
       this.ocultarTexto = false;
-      this.validacionRed = true;
-      this.condicion = "";
-    } 
+    }
   }
 
   limpiar(cedula:string) {
-    if (cedula=="") {
-      this.mostrarTabla = false;
-    }
     this.condicion = "";
     this.validacionRed = true;
   }
