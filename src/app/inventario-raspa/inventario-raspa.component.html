@@ -9,7 +9,7 @@
         <div class="col-md-12 px-5 ">
           <form [formGroup]="myForm" (ngSubmit)="onSubmit(cedula.value)" class=""  action="">
             <label for="">Por favor digite su cedula</label>
-            <input (click)="limpiar(cedula.value)" placeholder="Ingrese su numero de cedula" (ngModelChange)="quitarMensajesError(cedula.value)" formControlName="cedulavalidar" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} "  class="form-control mt-3" #cedula  type="text" (ngModelChange)="mostrarTabla=false" (ngModelChange)="ocultarTexto=false"> 
+            <input (ngModelChange)="quitarMensajesError(cedula.value)" (click)="limpiar(cedula.value)" placeholder="Ingrese su numero de cedula"  formControlName="cedulavalidar" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} "  class="form-control mt-3" #cedula  type="text"  > 
             <h6 class="condicion" > {{condicion}} </h6> 
             <input class="btn btn-primary mt-2"value="Consultar"   type="submit">
     
@@ -41,7 +41,7 @@
                   <th scope="col">SINVENTA</th>
                 </tr>
               </thead>
-              <tbody *ngIf="mostrarTabla">
+              <tbody >
                 <tr *ngFor="let recorrer of inventarioRaspas | paginate: { itemsPerPage: 5, currentPage: page }" >
                   
                   <td> {{recorrer[1]}} </td>
