@@ -43,7 +43,7 @@ export class ComponentValidacionFraccionesComponent implements OnInit {
         this.ocultarTexto = true;
         this.cargando = false;
         this.mostrarTabla = true;
-      })
+      });
       this.validacionRed = true;
       
     } else {
@@ -81,7 +81,7 @@ export class ComponentValidacionFraccionesComponent implements OnInit {
     } else if(cedula=="") {
       this.condicion = "";
       this.validacionRed = true;
-    }
+    } 
   }
 
   limpiar() {

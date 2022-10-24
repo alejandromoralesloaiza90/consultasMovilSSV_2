@@ -8,11 +8,9 @@ import { Injectable } from '@angular/core';
 export class InventarioRaspaService {
 
   constructor(private httpClient: HttpClient) { }
-  
-  url: string = "http://localhost/pruebaPHP/";
 
-  cargarRaspas() {
-    return this.httpClient.get("http://localhost/pruebaPHP/databaseConect.php");
+  cargarRaspas(cedula:string) {
+    return this.httpClient.get(`https://10.25.1.137:3000/inventarioraspe/${cedula}`);
   }
 
 

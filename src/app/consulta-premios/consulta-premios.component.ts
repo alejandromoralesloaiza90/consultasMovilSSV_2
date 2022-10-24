@@ -18,23 +18,31 @@ export class ConsultaPremiosComponent implements OnInit {
     this.myForm=this.vali.validarSerie();
   }
 
-  
+  //Se inicializan las variables
   myForm: any;
-
+  mostrarTabla:boolean = true;
+  cargando: boolean = false;
+  ocultarTexto:boolean = false;
   validacionRed: boolean = true;
   condicion: string = "";
   serie2:any="";
   numero2:any="";
   consultasPremio: any[]=[];
-  //Se verifica la validación del formulario 
-  onSubmit() {
 
+  //Se verifica la validación del formulario 
+  onSubmit(serie:string, numero:string) {
+
+    if(serie.length<=3 && numero.length<=15){
+      this.cargando=true;
+    }
     if (this.myForm.valid) {
       
-      this.premio.cargarConsultaPremios().subscribe(premio=> {
+      this.premio.cargarConsultaPremios(serie, numero).subscribe(premio=> {
         this.consultasPremio = Object.values(premio);
-      this.condicion = "";
-      
+        this.condicion = "";
+        this.ocultarTexto = true;
+        this.cargando = false;
+        this.mostrarTabla = true;
       });
       this.validacionRed = true;
     } else {
@@ -60,11 +68,11 @@ export class ConsultaPremiosComponent implements OnInit {
 
   //validamos los mensajes de error  al borrar lo escrito en el input
   quitarMensajesError(serie:string , numero:string ) {
-    if (serie=="" && numero=="" )  {
+    if (serie=="" && numero=="")  {
+      this.mostrarTabla = false;
+      this.ocultarTexto = false;
       this.validacionRed = true;
       this.condicion = "";
-    } else {
-      console.log("tiene datos");
     }
   }
 }
