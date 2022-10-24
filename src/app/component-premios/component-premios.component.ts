@@ -35,10 +35,12 @@ export class ComponentPremiosComponent implements OnInit {
     
     if (this.myForm.valid) {
       
+      //llamos al servicio que nos trae los datos por url
       this.premiosRaspas.cargarPremiosRaspas(cedulaColocador).subscribe(premiosRaspa => {
 
         this.cargando = true;
 
+        //aqui hacemos mas validaciones
         this.savePremios = Object.values(premiosRaspa);
         if (this.savePremios.length == 0) {
           this.condicion = "no existen registros con esa cedula";
@@ -65,6 +67,8 @@ export class ComponentPremiosComponent implements OnInit {
     this.condicion = "";
     this.validacionRed = true;
   }
+
+  //con esta funcion limpiamos la tabla y quitamos mensajes de error
   quitarMensajesError(cedula:string) {
     
     if (cedula.length==0) {
