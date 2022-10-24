@@ -5,7 +5,7 @@ import { TransaccionesDiaService } from '../transacciones-dia.service'
 import { FormBuilder} from '@angular/forms';
 //importamos servicio de validación
 import { ValidacionesCedulaService } from '../validaciones-cedula.service';
-import {NgbPaginationConfig} from '@ng-bootstrap/ng-bootstrap'; 
+
 @Component({
   selector: 'app-transacciones-del-dia',
   templateUrl: './transacciones-del-dia.component.html',

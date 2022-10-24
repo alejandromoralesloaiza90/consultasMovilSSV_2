@@ -28,12 +28,14 @@ export class ConsultaPremiosComponent implements OnInit {
   serie2:any="";
   numero2:any="";
   consultasPremio: any[]=[];
+  page: number = 1;
 
   //Se verifica la validación del formulario 
   onSubmit(serie:string, numero:string) {
 
     if(serie.length<=3 && numero.length<=15){
       this.cargando=true;
+      this.ocultarTexto=false;
     }
     if (this.myForm.valid) {
       
@@ -46,7 +48,6 @@ export class ConsultaPremiosComponent implements OnInit {
       });
       this.validacionRed = true;
     } else {
-
       console.log("faltan datos");
       this.condicion = "Por favor verifique la serie o el numero";
       this.validacionRed = false;
