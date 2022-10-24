@@ -43,7 +43,7 @@ export class ComponentValidacionFraccionesComponent implements OnInit {
         this.ocultarTexto = true;
         this.cargando = false;
         this.mostrarTabla = true;
-      })
+      });
       this.validacionRed = true;
       
     } else {
@@ -75,11 +75,8 @@ export class ComponentValidacionFraccionesComponent implements OnInit {
       this.mostrarTabla = false;
       this.ocultarTexto = false;
       this.consultasFracciones = [""];
-      console.log("hola");
       this.validacionRed = true;
       this.condicion = "";
-    } else {
-      console.log("tiene datos");
     }
   }
 

@@ -39,7 +39,7 @@ export class ValidacionesCedulaService {
   //función validar transacciones del día
   validarSerie(){
     this.myForm = this.fb.group({
-      serie: ['', [Validators.required, Validators.maxLength(3), Validators.pattern('[0-9 ]*')]],
+      serie: ['', [Validators.required, Validators.maxLength(3), Validators.pattern('[A-Za-z0-9 ]*')]],
       numero: ['', [Validators.required, Validators.maxLength(15), Validators.pattern('[0-9 ]*')]]
     })
 

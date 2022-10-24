@@ -7,12 +7,9 @@
       <br>
       <div class="row">
         <div class="col-md-12 px-5 ">
-          <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class=""  action="">
+          <form [formGroup]="myForm" (ngSubmit)="onSubmit(cedula.value)" class=""  action="">
             <label for="">Por favor digite su cedula</label>
-
-
-            <input placeholder="Ingrese su numero de cedula" (ngModelChange)="quitarMensajesError(cedula.value)" formControlName="cedulavalidar" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} "  class="form-control mt-3" #cedula  type="text"> 
-
+            <input placeholder="Ingrese su numero de cedula" (ngModelChange)="quitarMensajesError(cedula.value)" formControlName="cedulavalidar" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} "  class="form-control mt-3" #cedula  type="text" (ngModelChange)="mostrarTabla=false" (ngModelChange)="ocultarTexto=false"> 
             <h6 class="condicion" > {{condicion}} </h6> 
             <input class="btn btn-primary mt-2"value="Consultar" (click)="inventarioRaspa(cedula.value)"   type="submit">
     
@@ -22,8 +19,9 @@
     
       <br><br><div class="row">
         <div class="col-md-12">
-          <h6>Cedula consultada</h6>
-          <p> {{cedulaInventario}} </p>
+          <h6 class="mt-2" *ngIf="cargando" >CARGANDO INFORMACIÓN, POR FAVOR ESPERE</h6>
+          <h6 class="mt-2" *ngIf="ocultarTexto" >Cedula consultada</h6>
+          <p *ngIf="ocultarTexto"> {{cedulaInventario}} </p>
         </div>
       </div>
     
@@ -43,29 +41,16 @@
                   <th scope="col">SINVENTA</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody *ngIf="mostrarTabla">
                 <tr *ngFor="let recorrer of inventarioRaspas" >
                   
-                  <td> {{recorrer.id}} </td>
-                  <td> {{recorrer.nombre}} </td>
-                  <td> {{recorrer.apellido}} </td>
-                  <td> {{recorrer.celular}} </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
+                  <td> {{recorrer[1]}} </td>
+                  <td> {{recorrer[3]}} </td>
+                  <td> {{recorrer[4]}} </td>
+                  <td> {{recorrer[5]}} </td>
+                  <td> {{recorrer[6]}} </td>
+                  <td> {{recorrer[7]}} </td>
+                  <td> {{recorrer[8]}} </td>
                 </tr>
               </tbody>
             </table>
