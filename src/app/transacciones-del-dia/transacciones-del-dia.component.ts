@@ -5,7 +5,7 @@ import { TransaccionesDiaService } from '../transacciones-dia.service'
 import { FormBuilder} from '@angular/forms';
 //importamos servicio de validación
 import { ValidacionesCedulaService } from '../validaciones-cedula.service';
-
+import {NgbPaginationConfig} from '@ng-bootstrap/ng-bootstrap'; 
 @Component({
   selector: 'app-transacciones-del-dia',
   templateUrl: './transacciones-del-dia.component.html',
@@ -24,6 +24,8 @@ export class TransaccionesDelDiaComponent implements OnInit {
   condicion: string = "";
   cedula2: string = "";
   transaccionDia: any[] = [];
+  pages: number = 1;
+  
 
   //Se verifica la validación del formulario 
   onSubmit(cedulaColocador:string,pass:string) {

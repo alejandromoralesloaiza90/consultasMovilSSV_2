@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { ComponentPremiosComponent } from './component-premios/component-premios.component';
 import { ComponentValidacionFraccionesComponent } from './component-validacion-fracciones/component-validacion-fracciones.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { InventarioRaspaComponent } from './inventario-raspa/inventario-raspa.component';
 import { FooterComponent } from './footer/footer.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -16,7 +17,7 @@ import { TransaccionesDelDiaComponent } from './transacciones-del-dia/transaccio
 import { ConsultaPremiosComponent } from './consulta-premios/consulta-premios.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PremioRaspaService } from './premio-raspa.service';
-import { FormGroup, FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { ValidacionFraccionesService } from './validacion-fracciones.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ValidacionesCedulaService } from './validaciones-cedula.service';
@@ -50,14 +51,15 @@ const appRoutes: Routes = [
     TransaccionesDelDiaComponent,
     ConsultaPremiosComponent,
     FraccionesProcesoDevolucionComponent,
+    
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
-    
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [
     InventarioRaspaComponent,
