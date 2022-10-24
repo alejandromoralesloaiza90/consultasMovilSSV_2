@@ -20,27 +20,30 @@ export class ComponentPremiosComponent implements OnInit {
   }
 
   myForm: any;
-  
+  mostrartabla: boolean = true; 
   validacionRed: boolean = true;
   condicion: string = "";
   cedula2: string = "";
   savePremios: any[] = [];
 
   //Se verifica la validación del formulario 
-  onSubmit() {
-
+  onSubmit(cedulaColocador:string) {
+    this.mostrartabla = true;
     if (this.myForm.valid) {
       
-      this.premiosRaspas.cargarPremiosRaspas().subscribe(premiosRaspa => {
-      this.savePremios = Object.values(premiosRaspa);
-      this.condicion = "";
+      this.premiosRaspas.cargarPremiosRaspas(cedulaColocador).subscribe(premiosRaspa => {
+        this.savePremios = Object.values(premiosRaspa);
+        if (this.savePremios.length==0) {
+          this.condicion = "no existen registros con esa cedula";
+        }
+      
       
       });
       this.validacionRed = true;
     } else {
 
       console.log("faltan datos");
-      this.condicion = "Por favor digite su cedula";
+      this.condicion = "ingrese un numero de cedula valido";
       this.validacionRed = false;
     }
   }
@@ -54,6 +57,21 @@ export class ComponentPremiosComponent implements OnInit {
       this.cedula2 = "";
 
     }
+  }
+
+  limpiar() {
+    this.condicion = "";
+    this.validacionRed = true;
+  }
+
+  quitarMensajesError(cedula:string) {
+    
+    if (cedula.length==0) {
+      this.mostrartabla = false;
+      this.savePremios = [];
+    }
+
+
   }
 
 }

@@ -8,7 +8,7 @@ export class PremioRaspaService {
 
   constructor(private httpClient: HttpClient) { }
 
-  cargarPremiosRaspas() {
-    return this.httpClient.get("https://run.googleapis.com/$discovery/rest?version=v2");
+  cargarPremiosRaspas(cedulaColocador:string) {
+    return this.httpClient.get(`https://10.25.1.137:3000/raspepremios/'${cedulaColocador}' `);
   }
 }
