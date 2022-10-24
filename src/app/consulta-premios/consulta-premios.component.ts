@@ -32,11 +32,13 @@ export class ConsultaPremiosComponent implements OnInit {
 
   //Se verifica la validación del formulario 
   onSubmit(serie:string, numero:string) {
-
+    //verifico datos para mostrar mensajes
     if(serie.length<=3 && numero.length<=15){
       this.cargando=true;
       this.ocultarTexto=false;
     }
+
+    //valido datos a consultar y muestro respuesta
     if (this.myForm.valid) {
       
       this.premio.cargarConsultaPremios(serie, numero).subscribe(premio=> {

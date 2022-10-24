@@ -7,12 +7,12 @@
     <br>
     <div class="row">
         <div class="col-md-12 px-5">
-        <form [formGroup]="myForm" (ngSubmit)="onSubmit()"  class=""  action="">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(fraccionDevolucion.value)"  class=""  action="">
             <label for="">Por favor digite la cedula</label>
-            <input (ngModelChange)="quitarMensajesError(cedula.value)" formControlName="cedulavalidar" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} "  placeholder="Ingrese su numero de cedula"  class="form-control mt-3  " #cedula  type="text">
+            <input (ngModelChange)="quitarMensajesError(fraccionDevolucion.value)" formControlName="cedulavalidar" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} "  placeholder="Ingrese su numero de cedula"  class="form-control mt-3  " #fraccionDevolucion  type="text">
 
             <h6 class="condicion" > {{condicion}}  </h6>
-            <input class="btn btn-primary mt-2" (click)="cedula1(cedula.value)" value="Consultar" type="submit">
+            <input class="btn btn-primary mt-2" (click)="cedula1(fraccionDevolucion.value)" value="Consultar" type="submit">
 
         </form>
         </div>
@@ -20,8 +20,9 @@
 
     <div class="row">
         <div class="col-md-12">
-        <h6>Cedula consultada</h6>
-        <p> {{cedula2}}  </p>
+            <h6 class="mt-2" *ngIf="cargando" >CARGANDO INFORMACIÓN, POR FAVOR ESPERE</h6>
+        <h6 class="mt-3" *ngIf="ocultarTexto">Fraccion Devolución consultada</h6>
+        <p class="mt-3" *ngIf="ocultarTexto"> {{fraccionDevolucion2}}  </p>
         </div>
     </div>
 
@@ -32,7 +33,6 @@
             <table class="table">
             <thead>
                 <tr>
-                <th scope="col">ID</th>
                 <th scope="col">FECHAPAGO</th>
                 <th scope="col">HORAPAGO</th>
                 <th scope="col">CAJERO</th>
@@ -42,28 +42,17 @@
                 <th scope="col">ACUMULADO</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody *ngIf="mostrarTabla">
                 <tr *ngFor="let recorrer of devolucionFracciones" >
+                    <td> {{recorrer[1]}} </td>
+                    <td> {{recorrer[2]}} </td>
+                    <td> {{recorrer[3]}} </td>
+                    <td> {{recorrer[4]}} </td>
+                    <td> {{recorrer[5]}} </td>
+                    <td> {{recorrer[6]}} </td>
+                    <td> {{recorrer[7]}} </td>
+                </tr>
                 
-                    <td> {{recorrer}} </td>
-                    
-                </tr>
-                <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                </tr>
-                <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                </tr>
             </tbody>
             </table>
         </div>

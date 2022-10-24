@@ -19,6 +19,7 @@ export class ComponentPremiosComponent implements OnInit {
     this.myForm = this.vali.validarCedula();
   }
 
+  //Inicializar variables
   myForm: any;
   cargando: boolean = false;
   ocultarTexto:boolean = false;
@@ -64,11 +65,11 @@ export class ComponentPremiosComponent implements OnInit {
     }
   }
 
+  //Quitar mensajes de error
   limpiar() {
     this.condicion = "";
     this.validacionRed = true;
   }
-
   quitarMensajesError(cedula:string) {
     
     if (cedula.length==0) {

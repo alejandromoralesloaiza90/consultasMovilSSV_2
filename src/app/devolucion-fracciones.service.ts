@@ -8,8 +8,8 @@ export class DevolucionFraccionesService {
 
   constructor(private http: HttpClient) { }
   
-  devolucionFracciones() {
-    return this.http.get("https://pokeapi.co/api/v2/pokemon/ditto");
+  devolucionFracciones(cedula:string) {
+    return this.http.get(`https://10.25.1.137:3000/devolucion/'${cedula}'`);
   }
 
 
