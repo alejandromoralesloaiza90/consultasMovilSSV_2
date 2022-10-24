@@ -26,20 +26,25 @@ export class TransaccionesDelDiaComponent implements OnInit {
   transaccionDia: any[] = [];
 
   //Se verifica la validación del formulario 
-  onSubmit() {
+  onSubmit(cedulaColocador:string,pass:string) {
 
     if (this.myForm.valid) {
       
-      this.transaccionesdeldia.traerTransacciones().subscribe(transaccionesdia => {
+      this.transaccionesdeldia.traerTransacciones(cedulaColocador, pass).subscribe(transaccionesdia => {
+      
       this.transaccionDia = Object.values(transaccionesdia);
-      this.condicion = "";
+        this.condicion = "";
+        
+        if (this.transaccionDia.length==0) {
+          this.condicion = "cedula o contraseña incorrectas";
+          this.validacionRed = false;
+        }
+
       });
       this.validacionRed = true;
 
     } else {
-
-      console.log("faltan datos");
-      this.condicion = "Por favor verifique su cedula y su contraseña";
+      this.condicion = "Por favor verifique su cedula o su contraseña";
       this.validacionRed = false;
     }
   }
@@ -53,5 +58,17 @@ export class TransaccionesDelDiaComponent implements OnInit {
       this.cedula2 = "";
 
     }
+  }
+
+  quitarMensajesError(validar:string) {
+    
+
+    if (validar.length>=1) {
+      this.validacionRed = true;
+      this.condicion = "";
+    } else {
+      this.cedula2 = "";
+    }
+
   }
 }

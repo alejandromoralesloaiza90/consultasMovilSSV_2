@@ -70,17 +70,23 @@ export class ComponentValidacionFraccionesComponent implements OnInit {
     }
   }
 
-  quitarMensajesError(cedula:string) {
-    if (cedula == "" || cedula.length <= 19) {
+  quitarMensajesError(cedula: string) {
+
+    if (cedula.length <= 19 && cedula.length>=18  ) {
       this.mostrarTabla = false;
+      this.condicion = "Por favor digite un numero de fraccion valido";
       this.ocultarTexto = false;
       this.consultasFracciones = [""];
-      console.log("hola");
       this.validacionRed = true;
+    } else if(cedula=="") {
       this.condicion = "";
-    } else {
-      console.log("tiene datos");
+      this.validacionRed = true;
     }
+  }
+
+  limpiar() {
+    this.condicion = "";
+    this.validacionRed = true;
   }
 
 }

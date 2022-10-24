@@ -7,11 +7,11 @@
     <br>
     <div class="row">
         <div class="col-md-12 px-5 ">
-        <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class=""  action="">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(cedula.value,pass.value)" class=""  action="">
             <label for="">Por favor digite la cedula</label>
-            <input [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " placeholder="Ingrese su numero de cedula"  class="form-control mt-3  " #cedula  formControlName="cedulavalidar" type="text"><br>
+            <input  (ngModelChange)="quitarMensajesError(cedula.value)" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " placeholder="Ingrese su numero de cedula"  class="form-control mt-3  " #cedula  formControlName="cedulavalidar" type="text"><br>
             <label for="">Ingrese contraseña de POSSLIM a continuación</label>
-            <input [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " placeholder="Ingrese su numero de contaseña"  class="form-control mt-3  " #pass  formControlName="transaccionvalidar" type="password">
+            <input  (ngModelChange)="quitarMensajesError(pass.value)" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " placeholder="Ingrese su numero de contaseña"  class="form-control mt-3  " #pass  formControlName="transaccionvalidar" type="text">
             <h6 class="condicion mt-3"> {{condicion}} </h6>
             <input class="btn btn-primary mt-2" value="Consultar" (click)="cedula1(cedula.value)" type="submit">
 
@@ -21,8 +21,12 @@
 
     <div class="row">
         <div class="col-md-12">
+
+        <h6 *ngIf="" >CARGANDO INFORMACIÓN, POR FAVOR ESPERE</h6>
+
         <h6>Cedula consultada</h6>
         <p>{{cedula2}}</p>
+
         </div>
     </div>
     <div class="row mt-4">
@@ -33,7 +37,6 @@
                         <tr>
                         <th scope="col">TIPO</th>
                         <th scope="col">PROVEEDOR</th>
-                        <th scope="col">SERVICIO</th>
                         <th scope="col">PRODUCTO</th>
                         <th scope="col">HORA</th>
                         <th scope="col">CLAVE</th>
@@ -43,31 +46,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        </tr>
+                        
                         <tr *ngFor="let recorrer of transaccionDia" >
                   
-                            <td> {{recorrer.name}} </td>
+                            <td> {{recorrer[2]}} </td>
+                            <td> {{recorrer[3]}} </td>
+                            <td> {{recorrer[4]}} </td>
+                            <td> {{recorrer[6]}} </td>
+                            <td> {{recorrer[7]}} </td>
+                            <td> {{recorrer[8]}} </td>
+                            <td> {{recorrer[9]}} </td>
+                            <td> {{recorrer[10]}} </td>
                           </tr>
                         <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        </tr>
+                        
                     </tbody>
                 </table>
             </div>

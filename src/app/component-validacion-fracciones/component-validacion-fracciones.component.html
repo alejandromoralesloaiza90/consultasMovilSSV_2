@@ -9,7 +9,7 @@
         <div class="col-md-12 px-5">
         <form [formGroup]="myForm" (ngSubmit)="onSubmit(fraccion.value)" class=""  action="">
             <label for="">Por favor escanee o digite la fraccion</label>
-            <input (ngModelChange)="quitarMensajesError(fraccion.value)" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " placeholder="Ingrese el número de la fracción"  class="form-control mt-3  " #fraccion  formControlName="fraccionvalidar" type="text">
+            <input (click)="limpiar()" (ngModelChange)="quitarMensajesError(fraccion.value)" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " placeholder="Ingrese el número de la fracción"  class="form-control mt-3  " #fraccion  formControlName="fraccionvalidar" type="text">
             <h6 class="condicion" > {{condicion}} </h6>
             <input class="btn btn-primary mt-2" value="Consultar" (click)="fracciones1(fraccion.value)" type="submit">
 

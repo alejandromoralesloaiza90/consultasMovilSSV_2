@@ -8,7 +8,7 @@ export class TransaccionesDiaService {
 
   constructor(private http: HttpClient) { }
 
-  traerTransacciones(){
-    return this.http.get("https://pokeapi.co/api/v2/pokemon/ditto");
+  traerTransacciones(cedulaColocador:string, pass:string){
+    return this.http.get(`https://10.25.1.137:3000/virtuales/'${cedulaColocador}'/'${pass}'`);
   }
 }

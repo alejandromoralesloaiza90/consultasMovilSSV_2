@@ -31,7 +31,7 @@ export class ValidacionesCedulaService {
   validarTransaccionesDia(){
     this.myForm = this.fb.group({
       cedulavalidar: ['', [Validators.required, Validators.maxLength(10), Validators.pattern('[0-9 ]*')]],
-      transaccionvalidar: ['', [Validators.required, Validators.pattern(/(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/)]]
+      transaccionvalidar: ['', [Validators.required]]
     })
 
     return this.myForm;
