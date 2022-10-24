@@ -48,7 +48,6 @@ export class ConsultaPremiosComponent implements OnInit {
       });
       this.validacionRed = true;
     } else {
-
       console.log("faltan datos");
       this.condicion = "Por favor verifique la serie o el numero";
       this.validacionRed = false;
