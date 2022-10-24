@@ -8,7 +8,7 @@ export class InventarioLoteriaFisicaService {
 
   constructor(private http: HttpClient) { }
 
-  cartarInventarioLoteriaFisica(){
-    return this.http.get("https://pokeapi.co/api/v2/pokemon/ditto");
+  cartarInventarioLoteriaFisica(cedulaColocador:string){
+    return this.http.get(`https://10.25.1.137:3000/inventarioloteria/'${cedulaColocador}'`);
   }
 }

@@ -30,10 +30,10 @@ export class InventarioRaspaComponent implements OnInit {
 
   onSubmit(cedulas:string) {
 
-    
-
     if (this.myForm.valid) {
+
       this.cargando = true;
+      
       this.raspas.cargarRaspas(cedulas).subscribe(raspas => {
         this.inventarioRaspas = Object.values(raspas);
         
@@ -41,39 +41,40 @@ export class InventarioRaspaComponent implements OnInit {
           this.condicion = "no existen registros con ese numero de cedula";
           this.validacionRed = true;
           this.cedulaInventario = "";
+        } else {
+          this.cedulaInventario = cedulas;
+          this.mostrarTabla = true;
+          this.cargando = false;
+          this.ocultarTexto = true;
         }
-        this.cargando = false;
-        this.mostrarTabla = true;
+        
+        
+        
       });
       
     } else {
 
-      console.log("faltan datos");
+
       this.condicion = "Por favor digite su cedula";
       this.validacionRed = false;
     }
   }
 
-  inventarioRaspa(cedula:string){
-    if(this.myForm.valid){
-      this.cedulaInventario = cedula;
-    }
-    else{
-      this.cedulaInventario = "";
 
-    }
-  }
-  
+
   quitarMensajesError(cedula:string) {
     if (cedula=="") {
-      this.mostrarTabla = false;
+      
       this.ocultarTexto = false;
       this.validacionRed = true;
       this.condicion = "";
     } 
   }
 
-  limpiar() {
+  limpiar(cedula:string) {
+    if (cedula=="") {
+      this.mostrarTabla = false;
+    }
     this.condicion = "";
     this.validacionRed = true;
   }
