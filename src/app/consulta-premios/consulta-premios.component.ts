@@ -18,6 +18,7 @@ export class ConsultaPremiosComponent implements OnInit {
     this.myForm=this.vali.validarSerie();
   }
 
+
   //Se inicializan las variables
   myForm: any;
   mostrarTabla:boolean = true;
@@ -32,10 +33,12 @@ export class ConsultaPremiosComponent implements OnInit {
 
   //Se verifica la validación del formulario 
   onSubmit(serie:string, numero:string) {
+
     //verifico datos para mostrar mensajes
     if(serie.length<=3 && numero.length<=15){
-      this.cargando=true;
-      this.ocultarTexto=false;
+      this.cargando=false;
+      this.ocultarTexto = false;
+      this.validacionRed = true;
     }
 
     //valido datos a consultar y muestro respuesta
@@ -43,12 +46,19 @@ export class ConsultaPremiosComponent implements OnInit {
       
       this.premio.cargarConsultaPremios(serie, numero).subscribe(premio=> {
         this.consultasPremio = Object.values(premio);
-        this.condicion = "";
-        this.ocultarTexto = true;
-        this.cargando = false;
-        this.mostrarTabla = true;
+
+        if (this.consultasPremio.length==0) {
+          this.condicion = "no existe registro con estos datos";
+          this.validacionRed = false;
+          this.mostrarTabla = false;
+        } else {
+          this.ocultarTexto = true;
+          this.mostrarTabla = true;
+        }
+
+        
       });
-      this.validacionRed = true;
+      
     } else {
       console.log("faltan datos");
       this.condicion = "Por favor verifique la serie o el numero";
@@ -78,4 +88,11 @@ export class ConsultaPremiosComponent implements OnInit {
       this.condicion = "";
     }
   }
+
+  limpiar() {
+    this.condicion = "";
+    this.validacionRed = true;
+  }
+
+  
 }

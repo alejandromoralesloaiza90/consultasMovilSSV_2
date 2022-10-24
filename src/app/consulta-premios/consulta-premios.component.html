@@ -9,12 +9,12 @@
         <div class="col-md-12 px-5">
         <form [formGroup]="myForm" (ngSubmit)="onSubmit(serie.value, numero.value)">
             <label for="">Por favor digite la serie</label><br>
-            <input class="form-control mt-3" (ngModelChange)="quitarMensajesError(serie.value , numero.value )" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " placeholder="Ingrese la serie"  class="form-control mt-3  " #serie formControlName="serie" type="text" (ngModelChange)="mostrarTabla=false" (ngModelChange)="ocultarTexto=false"><br>
+            <input (click)="limpiar()" xclass="form-control mt-3" (ngModelChange)="quitarMensajesError(serie.value , numero.value )" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " placeholder="Ingrese la serie"  class="form-control mt-3  " #serie formControlName="serie" type="text" (ngModelChange)="mostrarTabla=false" (ngModelChange)="ocultarTexto=false"><br>
             <label for="">Digite el número</label>
-            <input (ngModelChange)="quitarMensajesError(serie.value , numero.value )" class="form-control mt-3" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " placeholder="Ingrese el número"  class="form-control mt-3  " #numero formControlName="numero" type="text" (ngModelChange)="mostrarTabla=false" (ngModelChange)="ocultarTexto=false"><br>
+            <input (click)="limpiar()" (ngModelChange)="quitarMensajesError(serie.value , numero.value )" class="form-control mt-3" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " placeholder="Ingrese el número"  class="form-control mt-3  " #numero formControlName="numero" type="text" (ngModelChange)="mostrarTabla=false" (ngModelChange)="ocultarTexto=false"><br>
             <h6 class="condicion" > {{condicion}} </h6>
             <input class="btn btn-primary mt-2" value="Consultar" (click)="premios1(serie.value,numero.value)" type="submit">
-
+            
         </form>
         </div>
     </div>
