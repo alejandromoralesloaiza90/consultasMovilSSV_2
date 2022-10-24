@@ -47,7 +47,7 @@
                     </thead>
                     <tbody>
                         
-                        <tr *ngFor="let recorrer of transaccionDia" >
+                        <tr *ngFor="let recorrer of transaccionDia | paginate: { itemsPerPage: 8, currentPage: pages } " >
                   
                             <td> {{recorrer[2]}} </td>
                             <td> {{recorrer[3]}} </td>
@@ -60,8 +60,13 @@
                           </tr>
                         <tr>
                         
+                        
                     </tbody>
+
+                    
+
                 </table>
+                <pagination-controls (pageChange)="pages = $event"></pagination-controls>
             </div>
         </div>
     </div>
