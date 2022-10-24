@@ -36,7 +36,7 @@ export class FraccionesProcesoDevolucionComponent implements OnInit {
     if (this.myForm.valid) {
 
       //se valida el tamaño de la fraccion devolución para mostrar mensajes
-      if(fraccion.length<=13 && fraccion.length>=11){
+      if(fraccion.length<=13 && fraccion.length>=10){
         this.cargando=true;
         this.ocultarTexto=false;
       }
@@ -50,7 +50,6 @@ export class FraccionesProcesoDevolucionComponent implements OnInit {
       });
       this.validacionRed = true;
     } else {
-      console.log("faltan datos");
       this.condicion = "Por favor digite CV y su número de cedula";
       this.validacionRed = false;
     }
