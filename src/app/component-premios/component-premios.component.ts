@@ -20,11 +20,14 @@ export class ComponentPremiosComponent implements OnInit {
   }
 
   myForm: any;
+  cargando: boolean = false;
+  ocultarTexto:boolean = false;
   mostrartabla: boolean = true; 
   validacionRed: boolean = true;
   condicion: string = "";
   cedula2: string = "";
   savePremios: any[] = [];
+  page: number = 1;
 
   //Se verifica la validación del formulario 
   onSubmit(cedulaColocador:string) {
@@ -36,7 +39,9 @@ export class ComponentPremiosComponent implements OnInit {
         if (this.savePremios.length==0) {
           this.condicion = "no existen registros con esa cedula";
         }
-      
+        this.cargando = false;
+        this.ocultarTexto = true;
+        this.mostrartabla = true;
       
       });
       this.validacionRed = true;
@@ -67,6 +72,8 @@ export class ComponentPremiosComponent implements OnInit {
   quitarMensajesError(cedula:string) {
     
     if (cedula.length==0) {
+      this.mostrartabla = false;
+      this.ocultarTexto = false;
       this.mostrartabla = false;
       this.savePremios = [];
     }
