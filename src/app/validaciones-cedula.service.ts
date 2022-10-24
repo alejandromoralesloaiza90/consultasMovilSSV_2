@@ -49,7 +49,7 @@ export class ValidacionesCedulaService {
   //función validar fracción devolución
   validarFraccionDevolucion(){
     this.myForm = this.fb.group({
-      fraccion: ['', [Validators.required, Validators.maxLength(13), Validators.pattern('[A-Z0-9 ]*')]]
+      fraccionDevolucion: ['', [Validators.required, Validators.pattern('[A-Za-z0-9 ]*')]]
     })
 
     return this.myForm;
