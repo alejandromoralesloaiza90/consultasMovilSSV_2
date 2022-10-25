@@ -18,23 +18,27 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row d-flex justify-content-around">
         <div class="col-md-12">
             <h6 class="mt-2" *ngIf="cargando" >CARGANDO INFORMACIÓN, POR FAVOR ESPERE</h6>
-        <h6 class="mt-3" *ngIf="ocultarTexto">FRACCIÓN DEVOLUCIÓN CONSULTADA</h6>
-        <p class="mt-2" *ngIf="ocultarTexto"> {{fraccionDevolucion2}}  </p>
-        <h6 class="mt-3" *ngIf="ocultarTexto">BODEGA ORIGEN</h6>
-        <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][0]}}  </p>
-        <h6 class="mt-3" *ngIf="ocultarTexto">BODEGA DESTINO</h6>
-        <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][1]}}  </p>
-        <h6 class="mt-3" *ngIf="ocultarTexto">FECHA REGISTRA</h6>
-        <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][9].substr(0,10)}}  </p>
-        <h6 class="mt-3" *ngIf="ocultarTexto">FECHA RECIBE</h6>
-        <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][11].substr(0,10)}}  </p>
-        <h6 class="mt-3" *ngIf="ocultarTexto">HORA RECIBE</h6>
-        <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][12]}}  </p>
-        <h6 class="mt-3" *ngIf="ocultarTexto">RECIBIDO POR</h6>
-        <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][8]}}  </p>
+            <h6 class="mt-3" *ngIf="ocultarTexto">FRACCIÓN DEVOLUCIÓN CONSULTADA</h6>
+            <p class="mt-2" *ngIf="ocultarTexto"> {{fraccionDevolucion2}}  </p>
+            <h6 class="mt-3" *ngIf="ocultarTexto">BODEGA ORIGEN</h6>
+            <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][0]}}  </p>
+            <h6 class="mt-3" *ngIf="ocultarTexto">BODEGA DESTINO </h6>
+            <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][1]}}  </p>   
+        </div>   
+        <div class="col-md-4 w-50">
+            <h6 class="mt-3" *ngIf="ocultarTexto">FECHA REGISTRA</h6>
+            <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][9].substr(0,10)}}  </p>
+            <h6 class="mt-3" *ngIf="ocultarTexto">FECHA RECIBE</h6>
+            <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][11].substr(0,10)}}  </p>
+        </div>
+        <div class="col-md-4 w-50">
+            <h6 class="mt-3" *ngIf="ocultarTexto">HORA RECIBE</h6>
+            <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][12]}}  </p>
+            <h6 class="mt-3" *ngIf="ocultarTexto">RECIBIDO POR</h6>
+            <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][8]}}  </p>
         </div>
     </div>
 
