@@ -1,11 +1,31 @@
 .condicion{
     color: red;
 }
-@media (max-width: 451px){
+@media (max-width: 450px){
     h6{
-        font-size: 73%;
+        font-size: 75%;
     }
     p{
-        font-size: 73%;
+        font-size: 78%;
+    }
+    th{
+        font-size: 75%;
+    }
+    td{
+        font-size: 75%;
+    }
+}
+@media (min-width: 451px){
+    h6{
+        font-size: 90%;
+    }
+    p{
+        font-size: 90%;
+    }
+    th{
+        font-size: 90%;
+    }
+    td{
+        font-size: 90%;
     }
 }
