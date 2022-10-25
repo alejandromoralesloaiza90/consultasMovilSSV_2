@@ -28,6 +28,7 @@ export class FraccionesProcesoDevolucionComponent implements OnInit {
   condicion: string = "";
   fraccionDevolucion2: string = "";
   devolucionFracciones: any[] = [];
+  page = 1;
 
   //función click botón y validaciones
   onSubmit(fraccion:string) {

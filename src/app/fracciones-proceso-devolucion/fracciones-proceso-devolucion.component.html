@@ -55,7 +55,7 @@
                 </tr>
             </thead>
             <tbody *ngIf="mostrarTabla">
-                <tr *ngFor="let recorrer of devolucionFracciones">
+                <tr *ngFor="let recorrer of devolucionFracciones | paginate: { itemsPerPage: 5, currentPage: page } ">
                     <td> {{recorrer[2]}} </td>
                     <td> {{recorrer[3]}} </td>
                     <td> {{recorrer[4]}} </td>
@@ -66,6 +66,7 @@
                 
             </tbody>
             </table>
+            <pagination-controls (pageChange)="page = $event"></pagination-controls>
         </div>
         
         </div>
