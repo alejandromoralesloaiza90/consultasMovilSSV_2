@@ -39,16 +39,24 @@ export class FraccionesProcesoDevolucionComponent implements OnInit {
       if(fraccion.length<=13 && fraccion.length>=10){
         this.cargando=true;
         this.ocultarTexto=false;
+        this.validacionRed = true;
       }
+
       //Consultar fracciones devolución
       this.devolucion.devolucionFracciones(fraccion).subscribe(devolucion => {
         this.devolucionFracciones = Object.values(devolucion);
-        this.condicion = "";
-        this.ocultarTexto = true;
-        this.cargando = false;
-        this.mostrarTabla = true;
+        if (this.devolucionFracciones.length==0) {
+          this.condicion = "No existe registro con estos datos";
+          this.validacionRed = false;
+          this.mostrarTabla = false;
+          this.ocultarTexto= false;
+          this.cargando=false;
+        } else {
+          this.cargando=false;
+          this.ocultarTexto = true;
+          this.mostrarTabla = true;
+        }
       });
-      this.validacionRed = true;
     } else {
       this.condicion = "Por favor digite CV y su número de cedula";
       this.validacionRed = false;
@@ -73,6 +81,10 @@ export class FraccionesProcesoDevolucionComponent implements OnInit {
       this.validacionRed = true;
       this.condicion = "";
     }
+  }
+  limpiar() {
+    this.condicion = "";
+    this.validacionRed = true;
   }
 
 }

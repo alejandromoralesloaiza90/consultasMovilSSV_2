@@ -27,6 +27,7 @@ export class ValidacionesCedulaService {
 
     return this.myForm;
   }
+  
   //función validar transacciones del día
   validarTransaccionesDia(){
     this.myForm = this.fb.group({
@@ -36,6 +37,7 @@ export class ValidacionesCedulaService {
 
     return this.myForm;
   }
+
   //función validar transacciones del día
   validarSerie(){
     this.myForm = this.fb.group({
@@ -49,7 +51,7 @@ export class ValidacionesCedulaService {
   //función validar fracción devolución
   validarFraccionDevolucion(){
     this.myForm = this.fb.group({
-      fraccionDevolucion: ['', [Validators.required, Validators.pattern('[A-Za-z0-9 ]*')]]
+      fraccionDevolucion: ['', [Validators.required, Validators.maxLength(13), Validators.minLength(9), Validators.pattern('^[A-Z]+[0-9]*$')]]
     })
 
     return this.myForm;
