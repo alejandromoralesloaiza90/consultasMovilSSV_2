@@ -11,7 +11,7 @@
             <label for="">Por favor escanee o digite la fraccion</label>
             <input (click)="limpiar()" (ngModelChange)="quitarMensajesError(fraccion.value)" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " placeholder="Ingrese el número de la fracción"  class="form-control mt-3  " #fraccion  formControlName="fraccionvalidar" type="text">
             <h6 class="condicion" > {{condicion}} </h6>
-            <input class="btn btn-primary mt-2" value="Consultar" (click)="fracciones1(fraccion.value)" type="submit">
+            <input class="btn btn-primary mt-2" value="Consultar"  type="submit">
 
         </form>
         </div>
@@ -53,7 +53,7 @@
                         <th scope="col">PAGADO</th>
                         </tr>
                     </thead>
-                    <tbody *ngIf="mostrarTabla" >
+                    <tbody>
                         <tr *ngFor="let fraccion of consultasFracciones">
                             <td>{{fraccion[2]}}</td>
                             <td>{{fraccion[3]}}</td>

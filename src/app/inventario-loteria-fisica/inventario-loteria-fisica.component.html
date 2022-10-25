@@ -11,7 +11,7 @@
             <label for="">Por favor digite la cedula</label>
             <input (click)="limpiar()" (ngModelChange)="quitarMensajesError(cedula.value)" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " placeholder="Ingrese su numero de cedula"  class="form-control mt-3  " #cedula  formControlName="cedulavalidar" type="text">
             <h6 class="condicion" > {{condicion}} </h6>
-            <input class="btn btn-primary mt-2" value="Consultar" (click)="cedula1(cedula.value)"  type="submit">
+            <input class="btn btn-primary mt-2" value="Consultar"   type="submit">
 
         </form>
         </div>
@@ -19,13 +19,11 @@
 
     <br><div class="row">
         <div class="col-md-12">
+
+        <h6 class="mt-2" *ngIf="cargando" >CARGANDO INFORMACIÓN, POR FAVOR ESPERE</h6>
+
         <h6 *ngIf="mostrarTexto" >Cedula consultada</h6>
         <p>{{cedula2}}</p>
-
-        <h6 *ngIf="mostrarTexto" >BODEGA</h6>
-        <p> {{inventarioLoteriaFisica[0][4]}} </p>
-
-        
 
         </div>
     </div>
@@ -37,6 +35,7 @@
                     <thead>
                         <tr>
                         <th scope="col">PRODUCTO</th>
+                        <th scope="col">BODEGA</th>
                         <th scope="col">FECHASORT</th>
                         <th scope="col">SORTEO</th>
                         <th scope="col">VALOR</th>
@@ -46,8 +45,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let loterias of inventarioLoteriaFisica">               
+                        <tr *ngFor="let loterias of inventarioLoteriaFisica | paginate: { itemsPerPage: 5, currentPage: page } ">               
                             <td>{{loterias[2]}}</td>
+                            <td>{{loterias[4]}}</td>
                             <td>{{loterias[0].substr(0,10)}}</td>
                             <td>{{loterias[5]}}</td>
                             <td>{{loterias[6]}}</td>
@@ -60,6 +60,7 @@
 
                     </tbody>
                 </table>
+                <pagination-controls (pageChange)="page = $event"></pagination-controls>
             </div>
         </div>
     </div>

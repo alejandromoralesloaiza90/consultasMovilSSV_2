@@ -31,55 +31,43 @@ export class ComponentValidacionFraccionesComponent implements OnInit {
   //Se verifica la validación del formulario 
   onSubmit(fraccionColocador: string) {
 
-    if (fraccionColocador.length>19) {
-      this.cargando = true;
-    }
-
-    
     if (this.myForm.valid) {
-      this.fracciones.cargarFracciones(fraccionColocador).subscribe(fracciones=>{
-      this.consultasFracciones = Object.values(fracciones);
-        this.condicion = "";
-        this.ocultarTexto = true;
-        this.cargando = false;
-        this.mostrarTabla = true;
+
+      this.cargando = true;
+
+      this.fracciones.cargarFracciones(fraccionColocador).subscribe(fracciones => {
+        
+        this.consultasFracciones = Object.values(fracciones);
+        
+        if (this.consultasFracciones.length ==0) {
+          this.condicion = "no existen registos con ese numero de fraccion";
+        } else {
+          this.cargando = false;
+          this.ocultarTexto = true;
+          this.fraccion2 = fraccionColocador;
+          this.validacionRed = true;
+        }
+
       });
-      this.validacionRed = true;
+      
       
     } else {
-      this.consultasFracciones = [];
-      console.log("faltan datos");
-      this.condicion = "Por favor digite el número de la fracción";
+      this.consultasFracciones = [""];
+      this.ocultarTexto = false;
+      this.condicion = "Campo vacio o longitud incorrecta";
       this.validacionRed = false;
     }
     
-    
-
   }
 
-  //validamos los datos del formulario y llenamos la variable cedula
-  fracciones1(cedula: string) {
-    
-    if(this.myForm.valid){
-      this.fraccion2 = cedula;
-      
-    }
-    else{
-      this.fraccion2 = "";
-
-    }
-  }
+ 
 
   quitarMensajesError(cedula: string) {
 
-    if (cedula.length <= 19 && cedula.length>=18  ) {
+    if (cedula.length==0  ) {
       this.mostrarTabla = false;
-      this.condicion = "Por favor digite un numero de fraccion valido";
       this.ocultarTexto = false;
       this.consultasFracciones = [""];
-      this.validacionRed = true;
-    } else if(cedula=="") {
-      this.condicion = "";
       this.validacionRed = true;
     } 
   }

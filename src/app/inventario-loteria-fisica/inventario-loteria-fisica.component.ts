@@ -22,61 +22,59 @@ export class InventarioLoteriaFisicaComponent implements OnInit {
 
 
   myForm: any;
+  cargando: boolean = false;
   mostrarTexto: boolean = false;
   validacionRed: boolean = true;
   condicion: string = "";
   cedula2: string = "";
-  inventarioLoteriaFisica: any[]=[];
+  inventarioLoteriaFisica: any[] = [];
+  page = 1;
 
    //Se verifica la validación del formulario 
    onSubmit(cedulaColocador:string) {
 
-    if (this.myForm.valid) {
+     if (this.myForm.valid) {
       
-      this.loteriaFisica.cartarInventarioLoteriaFisica(cedulaColocador).subscribe(loteriaFisica=>{
+      this.cargando = true;
+       
+      this.loteriaFisica.cartarInventarioLoteriaFisica(cedulaColocador).subscribe(loteriaFisica => {
+        
         this.inventarioLoteriaFisica = Object.values(loteriaFisica);
 
         if (this.inventarioLoteriaFisica.length==0) {
           this.condicion = "no existen registros con esa cedula";
+          this.inventarioLoteriaFisica = [""];
+          this.cargando = false;
           this.mostrarTexto = false;
           this.cedula2 = "";
           this.validacionRed = false;
         } else {
+          this.cargando = false;
+          this.cedula2 = cedulaColocador;
           this.mostrarTexto = true;
         }
 
 
       });
-      this.validacionRed = true;
     } else {
 
-      console.log("faltan datos");
       this.condicion = "Por favor digite su cedula";
       this.validacionRed = false;
     }
   }
 
-  //validamos los datos del formulario y llenamos la variable cedula
-  cedula1(cedula:string){
-    if(this.myForm.valid){
-      this.cedula2 = cedula;
-    }
-    else{
-      this.cedula2 = "";
 
-    }
-  }
 
   quitarMensajesError(cedula:string) {
 
-    if (cedula=="") {
+    if (cedula.length == 0) {
+      this.inventarioLoteriaFisica = [""];
       this.validacionRed = true;
       this.condicion = "";
-    } else {
-      console.log("tiene datos");
-    }
-
-
+      this.mostrarTexto = false;
+      this.cedula2 = "";
+      
+    } 
   }
 
   limpiar() {

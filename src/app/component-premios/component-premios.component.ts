@@ -15,6 +15,7 @@ export class ComponentPremiosComponent implements OnInit {
 
   constructor(private premiosRaspas: PremioRaspaService, public fb: FormBuilder , private vali:ValidacionesCedulaService) { }
 
+  //con el metodoOnInit hacemos que cuando se cargue por primera vez la pagina valide el formulario
   ngOnInit(): void {
     this.myForm = this.vali.validarCedula();
   }

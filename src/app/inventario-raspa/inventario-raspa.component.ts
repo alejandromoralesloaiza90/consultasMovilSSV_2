@@ -41,6 +41,7 @@ export class InventarioRaspaComponent implements OnInit {
           this.validacionRed = false;
           this.cedulaInventario = "";
           this.cargando = false;
+          this.ocultarTexto = false;
         } else {
           this.cedulaInventario = cedulas;
           this.cargando = false;
