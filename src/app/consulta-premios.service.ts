@@ -10,6 +10,6 @@ export class ConsultaPremiosService {
 
   //servicio para traer la informacion de los premios 
   cargarConsultaPremios(serie:string, numero:string){
-    return this.http.get(`https://10.25.1.137:3000/premios/'${serie}'/'${numero}'`);
+    return this.http.get(`consultapremios/'${serie}'/'${numero}'`);
   }
 }

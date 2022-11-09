@@ -9,6 +9,6 @@ export class TransaccionesDiaService {
   constructor(private http: HttpClient) { }
 
   traerTransacciones(cedulaColocador:string, pass:string){
-    return this.http.get(`https://10.25.1.137:3000/virtuales/'${cedulaColocador}'/'${pass}'`);
+    return this.http.get(`transaccionesdia/'${cedulaColocador}'/'${pass}'`);
   }
 }
