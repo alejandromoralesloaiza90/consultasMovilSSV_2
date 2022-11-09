@@ -9,15 +9,15 @@
     }
   },
 
-  "/inventarioRaspa/*": {
-    "target": "https://10.25.1.137:3000/fracciones",
+  "/inventarioraspa/*": {
+    "target": "https://10.25.1.137:3000/inventarioraspe",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug",
     "pathRewrite": {
-      "^/inventarioRaspa": ""
+      "^/inventarioraspa": ""
     }
-  },
+  }
 
 
 
@@ -27,7 +27,7 @@
 
 
 
-  
+
 }
 
 
