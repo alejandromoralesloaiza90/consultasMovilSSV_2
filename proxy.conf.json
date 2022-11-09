@@ -1,4 +1,6 @@
 {
+
+  
   "/api/*": {
     "target": "https://10.25.1.137:3000/fracciones",
     "secure": false,
@@ -47,6 +49,26 @@
     "logLevel": "debug",
     "pathRewrite": {
       "^/consultapremios": ""
+    }
+  },
+
+  "/inventariopremios/*": {
+    "target": "https://10.25.1.137:3000/raspepremios",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/inventariopremios": ""
+    }
+  },
+
+  "/fraccionesdevolucion/*": {
+    "target": "https://10.25.1.137:3000/devolucion",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/fraccionesdevolucion": ""
     }
   }
 

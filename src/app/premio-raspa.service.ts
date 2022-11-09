@@ -9,6 +9,6 @@ export class PremioRaspaService {
   constructor(private httpClient: HttpClient) { }
 
   cargarPremiosRaspas(cedulaColocador:string) {
-    return this.httpClient.get(`premiosraspa/'${cedulaColocador}' `);
+    return this.httpClient.get(`inventariopremios/'${cedulaColocador}' `);
   }
 }
