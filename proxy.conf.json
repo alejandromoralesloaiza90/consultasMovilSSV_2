@@ -28,6 +28,16 @@
     "pathRewrite": {
       "^/premiosraspa": ""
     }
+  },
+
+  "/loteriafisica/*": {
+    "target": "https://10.25.1.137:3000/inventarioloteria",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/loteriafisica": ""
+    }
   }
 
 
