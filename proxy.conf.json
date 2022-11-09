@@ -1,0 +1,13 @@
+{
+  "/api/*": {
+    "target": "https://10.25.1.137:3000/fracciones",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}
+
+

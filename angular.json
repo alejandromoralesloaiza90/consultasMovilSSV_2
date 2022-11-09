@@ -64,7 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "consultasSS:build:production"
+              "browserTarget": "consultasSS:build:production",
+              "proxyConfig": "proxy.conf.json",
+              "ssl": true
+              
             },
             "development": {
               "browserTarget": "consultasSS:build:development"

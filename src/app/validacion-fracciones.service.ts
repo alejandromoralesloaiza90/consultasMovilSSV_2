@@ -12,7 +12,7 @@ export class ValidacionFraccionesService {
   //creo una funcion y en ella uso la variable anteriormente creada para obtener una url por el metodo get
   cargarFracciones(fraccionColocador:string) {
     //retorno el json al archivo ts de validacion fracciones
-    return this.http.get(`https://10.25.1.137:3000/fracciones/${fraccionColocador}`);
+    return this.http.get(`api/${fraccionColocador}`);
   }
 
 }
