@@ -20,13 +20,13 @@
   },
 
 
-  "/a/*": {
-    "target": "https://10.25.1.137:3000/inventarioraspe",
+  "/premiosraspa/*": {
+    "target": "https://10.25.1.137:3000/raspepremios",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug",
     "pathRewrite": {
-      "^/a": ""
+      "^/premiosraspa": ""
     }
   },
 
