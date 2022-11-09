@@ -20,16 +20,6 @@
   },
 
 
-  "/premiosraspa/*": {
-    "target": "https://10.25.1.137:3000/raspepremios",
-    "secure": false,
-    "changeOrigin": true,
-    "logLevel": "debug",
-    "pathRewrite": {
-      "^/premiosraspa": ""
-    }
-  },
-
   "/loteriafisica/*": {
     "target": "https://10.25.1.137:3000/inventarioloteria",
     "secure": false,
