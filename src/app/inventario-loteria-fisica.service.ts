@@ -9,6 +9,6 @@ export class InventarioLoteriaFisicaService {
   constructor(private http: HttpClient) { }
 
   cartarInventarioLoteriaFisica(cedulaColocador:string){
-    return this.http.get(`https://10.25.1.137:3000/inventarioloteria/'${cedulaColocador}'`);
+    return this.http.get(`loteriafisica/'${cedulaColocador}'`);
   }
 }
