@@ -1,56 +1,59 @@
-<div class="container-fluid">
+<div class="container">
     <div class="row mt-5 text-center">
         <div class="col-md-12">
-        <h4>Validar estado fracciones Raspe</h4>
+            <h4>Validar estado fracciones Raspe</h4>
         </div>
     </div>
     <br>
     <div class="row">
         <div class="col-md-12 px-5">
-        <form [formGroup]="myForm" (ngSubmit)="onSubmit(fraccion.value)" class=""  action="">
-            <label for="">Por favor escanee o digite la fraccion</label>
-            <input (click)="limpiar()" (ngModelChange)="quitarMensajesError(fraccion.value)" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " placeholder="Ingrese el número de la fracción"  class="form-control mt-3  " #fraccion  formControlName="fraccionvalidar" type="text">
-            <h6 class="condicion" > {{condicion}} </h6>
-            <input class="btn btn-primary mt-2" value="Consultar"  type="submit">
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit(fraccion.value)" class="" action="">
+                <label for="">Por favor escanee o digite la fraccion</label>
+                <input (click)="limpiar()" (ngModelChange)="quitarMensajesError(fraccion.value)"
+                    [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} "
+                    placeholder="Ingrese el número de la fracción" class="form-control mt-3  " #fraccion
+                    formControlName="fraccionvalidar" type="text">
+                <h6 class="condicion"> {{condicion}} </h6>
+                <input class="btn btn-primary mt-2" value="Consultar" type="submit">
 
-        </form>
+            </form>
         </div>
     </div>
 
     <div class="row mt-4 ">
         <div class="col-md-12">
 
-        <h6  *ngIf="cargando" >CARGANDO INFORMACIÓN, POR FAVOR ESPERE</h6>
+            <h6 *ngIf="cargando">CARGANDO INFORMACIÓN, POR FAVOR ESPERE</h6>
 
-        <h6  *ngIf="ocultarTexto" >FRACCION CONSULTADA</h6>
-        <p *ngIf="ocultarTexto" >{{fraccion2}}</p>
+            <h6 *ngIf="ocultarTexto">FRACCION CONSULTADA</h6>
+            <p *ngIf="ocultarTexto">{{fraccion2}}</p>
 
-        <h6 *ngIf="ocultarTexto" >CEDULA Y NOMBRE BODEGA</h6>
-        <p> {{consultasFracciones[0][1]}} </p> 
+            <h6 *ngIf="ocultarTexto">CEDULA Y NOMBRE BODEGA</h6>
+            <p> {{consultasFracciones[0][1]}} </p>
 
-        <h6 *ngIf="ocultarTexto" >PAQUETE</h6>
-        <p> {{consultasFracciones[0][9]}} </p>
+            <h6 *ngIf="ocultarTexto">PAQUETE</h6>
+            <p> {{consultasFracciones[0][9]}} </p>
 
-        <h6 *ngIf="ocultarTexto" >PRODUCTO</h6>
-        <p> {{consultasFracciones[0][0]}} </p>
+            <h6 *ngIf="ocultarTexto">PRODUCTO</h6>
+            <p> {{consultasFracciones[0][0]}} </p>
 
-        <h6 *ngIf="ocultarTexto" >FECHA VENTA</h6>
-        <p *ngIf="ocultarTexto" > {{consultasFracciones[0][6].substr(0,10)}}</p> 
-        
+            <h6 *ngIf="ocultarTexto">FECHA VENTA</h6>
+            <p *ngIf="ocultarTexto"> {{consultasFracciones[0][6].substr(0,10)}}</p>
+
         </div>
     </div>
     <div class="row mt-4">
         <div class="col-md-12">
             <div class="table-responsive">
-                <table  class="table">
+                <table class="table">
                     <thead>
                         <tr>
-                        <th scope="col">NUMERO</th>
-                        <th scope="col">SERIE</th>
-                        <th scope="col">FRACCION</th>
-                        <th scope="col">ESTADO</th>
-                        <th scope="col">HORA VENTA</th>
-                        <th scope="col">PAGADO</th>
+                            <th scope="col">NUMERO</th>
+                            <th scope="col">SERIE</th>
+                            <th scope="col">FRACCION</th>
+                            <th scope="col">ESTADO</th>
+                            <th scope="col">HORA VENTA</th>
+                            <th scope="col">PAGADO</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -61,7 +64,7 @@
                             <td>{{fraccion[5]}}</td>
                             <td>{{fraccion[7]}}</td>
                             <td>{{fraccion[10]}}</td>
-                            
+
                         </tr>
                     </tbody>
                 </table>

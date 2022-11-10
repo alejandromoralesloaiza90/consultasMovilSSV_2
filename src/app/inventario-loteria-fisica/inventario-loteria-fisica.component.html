@@ -1,29 +1,33 @@
-<div class="container-fluid">
+<div class="container">
     <div class="row mt-5 text-center">
         <div class="col-md-12">
-        <h4>Consultar Inventario Loterias Fisicas</h4>
+            <h4>Consultar Inventario Loterias Fisicas</h4>
         </div>
     </div>
     <br>
     <div class="row">
         <div class="col-md-12 px-5">
-        <form [formGroup]="myForm" (ngSubmit)="onSubmit(cedula.value)" class="" action="">
-            <label for="">Por favor digite la cedula</label>
-            <input (click)="limpiar()" (ngModelChange)="quitarMensajesError(cedula.value)" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " placeholder="Ingrese su numero de cedula"  class="form-control mt-3  " #cedula  formControlName="cedulavalidar" type="text">
-            <h6 class="condicion" > {{condicion}} </h6>
-            <input class="btn btn-primary mt-2" value="Consultar"   type="submit">
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit(cedula.value)" class="" action="">
+                <label for="">Por favor digite la cedula</label>
+                <input (click)="limpiar()" (ngModelChange)="quitarMensajesError(cedula.value)"
+                    [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} "
+                    placeholder="Ingrese su numero de cedula" class="form-control mt-3  " #cedula
+                    formControlName="cedulavalidar" type="text">
+                <h6 class="condicion"> {{condicion}} </h6>
+                <input class="btn btn-primary mt-2" value="Consultar" type="submit">
 
-        </form>
+            </form>
         </div>
     </div>
 
-    <br><div class="row">
+    <br>
+    <div class="row">
         <div class="col-md-12">
 
-        <h6 class="mt-2" *ngIf="cargando" >CARGANDO INFORMACIÓN, POR FAVOR ESPERE</h6>
+            <h6 class="mt-2" *ngIf="cargando">CARGANDO INFORMACIÓN, POR FAVOR ESPERE</h6>
 
-        <h6 *ngIf="mostrarTexto" >Cedula consultada</h6>
-        <p>{{cedula2}}</p>
+            <h6 *ngIf="mostrarTexto">Cedula consultada</h6>
+            <p>{{cedula2}}</p>
 
         </div>
     </div>
@@ -34,18 +38,19 @@
                 <table class="table">
                     <thead>
                         <tr>
-                        <th scope="col">PRODUCTO</th>
-                        <th scope="col">BODEGA</th>
-                        <th scope="col">FECHASORT</th>
-                        <th scope="col">SORTEO</th>
-                        <th scope="col">VALOR</th>
-                        <th scope="col">FRACCIONES</th>
-                        <th scope="col">VENDIDA</th>
-                        <th scope="col">SINVENTA</th>
+                            <th scope="col">PRODUCTO</th>
+                            <th scope="col">BODEGA</th>
+                            <th scope="col">FECHASORT</th>
+                            <th scope="col">SORTEO</th>
+                            <th scope="col">VALOR</th>
+                            <th scope="col">FRACCIONES</th>
+                            <th scope="col">VENDIDA</th>
+                            <th scope="col">SINVENTA</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let loterias of inventarioLoteriaFisica | paginate: { itemsPerPage: 5, currentPage: page } ">               
+                        <tr
+                            *ngFor="let loterias of inventarioLoteriaFisica | paginate: { itemsPerPage: 5, currentPage: page } ">
                             <td>{{loterias[2]}}</td>
                             <td>{{loterias[4]}}</td>
                             <td>{{loterias[0].substr(0,10)}}</td>
@@ -55,7 +60,7 @@
                             <td>{{loterias[8]}}</td>
                             <td>{{loterias[9]}}</td>
                         </tr>
-                        
+
 
 
                     </tbody>

@@ -1,65 +1,68 @@
-<div class="container-fluid">
+<div class="container">
     <div class="row mt-5 text-center">
         <div class="col-md-12">
-        <h5>Consultar premios pagados Raspa y Listo</h5>
+            <h5>Consultar premios pagados Raspa y Listo</h5>
         </div>
     </div>
     <br>
     <div class="row">
         <div class="col-md-12 px-5">
-        <form [formGroup]="myForm" (ngSubmit)="onSubmit(cedula.value)"  class=""  action="">
-            <label for="">Por favor digite la cedula</label>
-            <input (ngModelChange)="quitarMensajesError(cedula.value)" (click)="limpiar()" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " placeholder="Ingrese su numero de cedula"  class="form-control mt-3  " #cedula  formControlName="cedulavalidar" type="text">
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit(cedula.value)" class="" action="">
+                <label for="">Por favor digite la cedula</label>
+                <input (ngModelChange)="quitarMensajesError(cedula.value)" (click)="limpiar()"
+                    [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} "
+                    placeholder="Ingrese su numero de cedula" class="form-control mt-3  " #cedula
+                    formControlName="cedulavalidar" type="text">
 
-            <h6 class="condicion" > {{condicion}} </h6>
-            <input class="btn btn-primary mt-2" value="Consultar"   type="submit">
+                <h6 class="condicion"> {{condicion}} </h6>
+                <input class="btn btn-primary mt-2" value="Consultar" type="submit">
 
-        </form>
+            </form>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
-        <h6 class="mt-2" *ngIf="cargando" >CARGANDO INFORMACIÓN, POR FAVOR ESPERE</h6>
-        <h6 class="mt-3" *ngIf="ocultarTexto">CEDULA CONSULTADA</h6>
-        <p class="mt-3" *ngIf="ocultarTexto"> {{cedula2}} </p>
+            <h6 class="mt-2" *ngIf="cargando">CARGANDO INFORMACIÓN, POR FAVOR ESPERE</h6>
+            <h6 class="mt-3" *ngIf="ocultarTexto">CEDULA CONSULTADA</h6>
+            <p class="mt-3" *ngIf="ocultarTexto"> {{cedula2}} </p>
         </div>
     </div>
 
 
     <div class="row  mt-3">
         <div class="col-md-12">
-        <div class="table-responsive">
-            <table class="table">
-            <thead>
-                <tr>
-                <th scope="col">ID</th>
-                <th scope="col">FECHAPAGO</th>
-                <th scope="col">HORAPAGO</th>
-                <th scope="col">CAJERO</th>
-                <th scope="col">CODIGOVENTA</th>
-                <th scope="col">TOTALPREMIO</th>
-                <th scope="col">RECAMBIO</th>
-                <th scope="col">ACUMULADO</th>
-                </tr>
-            </thead>
-            <tbody  >
-                <tr  *ngFor="let recorrer of savePremios  | paginate: { itemsPerPage: 5, currentPage: page }" >
-                
-                    <td> {{recorrer[7]}} </td>
-                    <td> {{recorrer[0].substr(0,10)}} </td>
-                    <td> {{recorrer[1]}} </td>
-                    <td> {{recorrer[2]}} </td>
-                    <td> {{recorrer[3]}} </td>
-                    <td> {{recorrer[4]}} </td>
-                    <td> {{recorrer[5]}} </td>
-                    <td> {{recorrer[6]}} </td>
-                </tr>
-                
-            </tbody>
-            </table>
-        </div>
-        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">FECHAPAGO</th>
+                            <th scope="col">HORAPAGO</th>
+                            <th scope="col">CAJERO</th>
+                            <th scope="col">CODIGOVENTA</th>
+                            <th scope="col">TOTALPREMIO</th>
+                            <th scope="col">RECAMBIO</th>
+                            <th scope="col">ACUMULADO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let recorrer of savePremios  | paginate: { itemsPerPage: 5, currentPage: page }">
+
+                            <td> {{recorrer[7]}} </td>
+                            <td> {{recorrer[0].substr(0,10)}} </td>
+                            <td> {{recorrer[1]}} </td>
+                            <td> {{recorrer[2]}} </td>
+                            <td> {{recorrer[3]}} </td>
+                            <td> {{recorrer[4]}} </td>
+                            <td> {{recorrer[5]}} </td>
+                            <td> {{recorrer[6]}} </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <pagination-controls (pageChange)="page = $event"></pagination-controls>
         </div>
     </div>
 

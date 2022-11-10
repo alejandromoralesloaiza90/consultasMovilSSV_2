@@ -1,44 +1,49 @@
-<div class="container-fluid">
+<div class="container">
     <div class="row mt-5 text-center">
         <div class="col-md-12">
-        <h5>Fracciones en proceso de devolucion</h5>
+            <h5>Fracciones en proceso de devolucion</h5>
         </div>
     </div>
     <br>
     <div class="row">
         <div class="col-md-12 px-5">
-        <form [formGroup]="myForm" (ngSubmit)="onSubmit(fraccionDevolucion.value)"  class=""  action="">
-            <label for="">Por favor digite la cedula</label>
-            <input (click)="limpiar()" (ngModelChange)="quitarMensajesError(fraccionDevolucion.value)" formControlName="fraccionDevolucion" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} "  placeholder="Ingrese su numero de cedula"  class="form-control mt-3  " #fraccionDevolucion  type="text"(ngModelChange)="mostrarTabla=false" (ngModelChange)="ocultarTexto=false" >
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit(fraccionDevolucion.value)" class="" action="">
+                <label for="">Por favor digite la cedula</label>
+                <input (click)="limpiar()" (ngModelChange)="quitarMensajesError(fraccionDevolucion.value)"
+                    formControlName="fraccionDevolucion"
+                    [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} "
+                    placeholder="Ingrese su numero de cedula" class="form-control mt-3  " #fraccionDevolucion
+                    type="text" (ngModelChange)="mostrarTabla=false" (ngModelChange)="ocultarTexto=false">
 
-            <h6 class="condicion" > {{condicion}}  </h6>
-            <input class="btn btn-primary mt-2" (click)="fraccion1(fraccionDevolucion.value)" value="Consultar" type="submit">
+                <h6 class="condicion"> {{condicion}} </h6>
+                <input class="btn btn-primary mt-2" (click)="fraccion1(fraccionDevolucion.value)" value="Consultar"
+                    type="submit">
 
-        </form>
+            </form>
         </div>
     </div>
 
     <div class="row d-flex justify-content-around">
         <div class="col-md-12">
-            <h6 class="mt-2" *ngIf="cargando" >CARGANDO INFORMACIÓN, POR FAVOR ESPERE</h6>
+            <h6 class="mt-2" *ngIf="cargando">CARGANDO INFORMACIÓN, POR FAVOR ESPERE</h6>
             <h6 class="mt-3" *ngIf="ocultarTexto">FRACCIÓN DEVOLUCIÓN CONSULTADA</h6>
-            <p class="mt-2" *ngIf="ocultarTexto"> {{fraccionDevolucion2}}  </p>
+            <p class="mt-2" *ngIf="ocultarTexto"> {{fraccionDevolucion2}} </p>
             <h6 class="mt-3" *ngIf="ocultarTexto">BODEGA ORIGEN</h6>
-            <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][0]}}  </p>
+            <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][0]}} </p>
             <h6 class="mt-3" *ngIf="ocultarTexto">BODEGA DESTINO </h6>
-            <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][1]}}  </p>   
-        </div>   
+            <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][1]}} </p>
+        </div>
         <div class="col-md-4 w-50">
             <h6 class="mt-3" *ngIf="ocultarTexto">FECHA REGISTRA</h6>
-            <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][9].substr(0,10)}}  </p>
+            <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][9].substr(0,10)}} </p>
             <h6 class="mt-3" *ngIf="ocultarTexto">FECHA RECIBE</h6>
-            <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][11].substr(0,10)}}  </p>
+            <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][11].substr(0,10)}} </p>
         </div>
         <div class="col-md-4 w-50">
             <h6 class="mt-3" *ngIf="ocultarTexto">HORA RECIBE</h6>
-            <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][12]}}  </p>
+            <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][12]}} </p>
             <h6 class="mt-3" *ngIf="ocultarTexto">RECIBIDO POR</h6>
-            <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][8]}}  </p>
+            <p class="mt-2" *ngIf="ocultarTexto"> {{devolucionFracciones[0][8]}} </p>
 
         </div>
     </div>
@@ -46,37 +51,36 @@
 
     <div class="row  mt-3">
         <div class="col-md-12">
-        <div class="table-responsive">
-            <table class="table">
-            <thead>
-                <tr>
-                <th scope="col">PRODUCTO</th>
-                <th scope="col">CODIGOVENTA</th>
-                <th scope="col">TOTALPREMIO</th>
-                <th scope="col">RECAMBIO</th>
-                <th scope="col">ACUMULADO</th>
-                <th scope="col">HORAREGISTRA</th>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">PRODUCTO</th>
+                            <th scope="col">CODIGOVENTA</th>
+                            <th scope="col">TOTALPREMIO</th>
+                            <th scope="col">RECAMBIO</th>
+                            <th scope="col">ACUMULADO</th>
+                            <th scope="col">HORAREGISTRA</th>
 
-                </tr>
-            </thead>
-            <tbody *ngIf="mostrarTabla">
-                <tr *ngFor="let recorrer of devolucionFracciones | paginate: { itemsPerPage: 5, currentPage: page } ">
-                    <td> {{recorrer[2]}} </td>
-                    <td> {{recorrer[3]}} </td>
-                    <td> {{recorrer[4]}} </td>
-                    <td> {{recorrer[5]}} </td>
-                    <td> {{recorrer[6]}} </td>
-                    <td> {{recorrer[10]}} </td>
-                </tr>
-                
-            </tbody>
-            </table>
-            <pagination-controls (pageChange)="page = $event"></pagination-controls>
-        </div>
-        
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="mostrarTabla">
+                        <tr
+                            *ngFor="let recorrer of devolucionFracciones | paginate: { itemsPerPage: 5, currentPage: page } ">
+                            <td> {{recorrer[2]}} </td>
+                            <td> {{recorrer[3]}} </td>
+                            <td> {{recorrer[4]}} </td>
+                            <td> {{recorrer[5]}} </td>
+                            <td> {{recorrer[6]}} </td>
+                            <td> {{recorrer[10]}} </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <pagination-controls (pageChange)="page = $event"></pagination-controls>
+            </div>
+
         </div>
     </div>
 
 </div>
-
-

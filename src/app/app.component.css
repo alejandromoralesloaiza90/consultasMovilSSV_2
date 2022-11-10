@@ -2,6 +2,10 @@
     background-color: #1f3a93;
 }
 
+li{
+    color: red;
+}
+
 @media (min-width: 451px){
     a{
         font-size: 78%;
