@@ -13,18 +13,13 @@
     h4{
         font-size: x-small;
     }
-    .row{
-        margin-top: 93%;
-    }
     img{
         width: 100%;
     }
 }
 
 @media (min-width: 451px){
-    .row{
-        margin-top: 20%;
-    }
+
     img{
        width: 70%; 
     }
