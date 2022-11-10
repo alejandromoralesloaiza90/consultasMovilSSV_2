@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ValidacionFraccionesService} from '../validacion-fracciones.service';
+import {ValidacionFraccionesService} from './validacion-fracciones.service';
 //Se importan las ayudas para el manejo del formulario
 import { FormBuilder} from '@angular/forms';
 //importamos servicio de validación

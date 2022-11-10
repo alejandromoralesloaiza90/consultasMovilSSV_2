@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InventarioRaspaService } from '../inventario-raspa.service';
+import { InventarioRaspaService } from './inventario-raspa.service';
 //Se importan las ayudas para el manejo del formulario
 import { FormBuilder } from '@angular/forms';
 import { ValidacionesCedulaService } from '../validaciones-cedula.service';

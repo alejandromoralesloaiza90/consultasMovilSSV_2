@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InventarioLoteriaFisicaService } from '../inventario-loteria-fisica.service';
+import { InventarioLoteriaFisicaService } from './inventario-loteria-fisica.service';
 //Se importan las ayudas para el manejo del formulario
 import { FormBuilder, FormGroup, PatternValidator, Validators } from '@angular/forms';
 //Se importa la estructural del condicional

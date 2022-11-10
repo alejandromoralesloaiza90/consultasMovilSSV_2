@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 //importamos el servicio
-import { TransaccionesDiaService } from '../transacciones-dia.service'
+import { TransaccionesDiaService } from './transacciones-dia.service'
 //Se importan las ayudas para el manejo del formulario
 import { FormBuilder} from '@angular/forms';
 //importamos servicio de validación

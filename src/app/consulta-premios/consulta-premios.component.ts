@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConsultaPremiosService } from '../consulta-premios.service';
+import { ConsultaPremiosService } from './consulta-premios.service';
 //Se importan las ayudas para el manejo del formulario
 import { FormBuilder} from '@angular/forms';
 //importamos servicio de validación
