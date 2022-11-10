@@ -11,5 +11,12 @@ h3{
 }
 
 .display-1{
-    text-shadow: 3px 3px  gray;
+    text-shadow: 2px 2px  gray;
 }
+
+.centrar{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+}
+

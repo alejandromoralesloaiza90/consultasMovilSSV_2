@@ -1,25 +1,25 @@
 <div class="container">
+
     <div class="row mt-5 text-center">
         <div class="col-md-12">
             <h1 class="display-4">Consultar transacciones del día</h1>
         </div>
-    </div>
-    <br />
+    </div> <br>
+
+
     <div class="row">
+
         <div class="col-md-12 px-5">
+
             <form [formGroup]="myForm" (ngSubmit)="onSubmit(cedula.value, pass.value)" class="" action="">
-                <label class="fw-bolder" for="">Por favor digite la cedula</label>
-                <input (ngModelChange)="quitarMensajesError(cedula.value)" [ngStyle]="{
-            'border-color': validacionRed == false ? 'red' : 'black'
-          }" placeholder="Ingrese su numero de cedula" class="form-control mt-3" #cedula
-                    formControlName="cedulavalidar" type="text" /><br />
-                <label class="fw-bolder" for="">Ingrese contraseña de POSSLIM a continuación</label>
-                <input (ngModelChange)="quitarMensajesError(pass.value)" [ngStyle]="{
-            'border-color': validacionRed == false ? 'red' : 'black'
-          }" placeholder="Ingrese su numero de contaseña" class="form-control mt-3" #pass
-                    formControlName="transaccionvalidar" type="text" />
+
+                <label class="fw-bolder" >Por favor digite la cedula</label>
+                <input (ngModelChange)="quitarMensajesError(cedula.value)" [ngStyle]="{'border-color': validacionRed == false ? 'red' : 'black'}" placeholder="Ingrese su numero de cedula" class="form-control mt-3" #cedula formControlName="cedulavalidar" type="text" /><br />
+                <label class="fw-bolder" >Ingrese contraseña de POSSLIM a continuación</label>
+                <input (ngModelChange)="quitarMensajesError(pass.value)" [ngStyle]="{'border-color': validacionRed == false ? 'red' : 'black'}" placeholder="Ingrese su numero de contaseña" class="form-control mt-3" #pass formControlName="transaccionvalidar" type="text" />
                 <h6 class="condicion mt-3">{{ condicion }}</h6>
                 <input class="btn btn-primary mt-2" value="Consultar" (click)="cedula1(cedula.value)" type="submit" />
+
             </form>
         </div>
     </div>
@@ -32,9 +32,13 @@
             <p>{{ cedula2 }}</p>
         </div>
     </div>
+
     <div class="row mt-4">
+
         <div class="col-md-12">
+
             <div class="table-responsive">
+
                 <table class="table">
                     <thead>
                         <tr>
@@ -49,10 +53,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="
-                let recorrer of transaccionDia
-                  | paginate: { itemsPerPage: 8, currentPage: pages }
-              ">
+                        <tr *ngFor=" let recorrer of transaccionDia | paginate: { itemsPerPage: 8, currentPage: pages }">
                             <td>{{ recorrer[2] }}</td>
                             <td>{{ recorrer[3] }}</td>
                             <td>{{ recorrer[4] }}</td>
