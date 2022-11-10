@@ -3,37 +3,36 @@
     <div class="col-md-12">
       <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-          <img src="https://10.25.1.9/ssvsa/wp-content/themes/ssvsa/assets/img/logo.png" alt="">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <div>
+            <a class="nav-link active" aria-current="page" routerLink="/"><img src="https://10.25.1.9/ssvsa/wp-content/themes/ssvsa/assets/img/logo.png" alt=""></a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                <a class="nav-link active" aria-current="page" routerLink="/inventarioRaspa">Inventario Raspa</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/inventarioRaspa">Inventario Raspa</a>
+                <a class="nav-link active "  routerLink="/premiosRaspa">Premios Raspa</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active "  href="/premiosRaspa">Premios Raspa</a>
+                <a class="nav-link active " routerLink="/validacionFracciones">Validacion de fracciones Raspa y listo</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active " href="/validacionFracciones">Validacion de fracciones Raspa y listo</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active"  href="/inventarioLoteriaFisica">Inventario loteria fisica</a>
+                <a class="nav-link active"  routerLink="/inventarioLoteriaFisica">Inventario loteria fisica</a>
               </li>
               
               <li class="nav-item">
-                <a class="nav-link active" href="/transaccionesDelDia">Consultar transacciones del día</a>
+                <a class="nav-link active" routerLink="/transaccionesDelDia">Consultar transacciones del día</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="/consultaPremios">Consulta de premios</a>
+                <a class="nav-link active" routerLink="/consultaPremios">Consulta de premios</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link active" href="/devolucionFracciones">Fracciones en proceso de devolocion</a>
+                <a class="nav-link active" routerLink="/devolucionFracciones">Fracciones en proceso de devolocion</a>
               </li>
 
             </ul>
@@ -46,3 +45,4 @@
 </div>
 
 <router-outlet></router-outlet>
+<app-footer></app-footer>
