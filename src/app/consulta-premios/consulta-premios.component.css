@@ -3,7 +3,7 @@
 }
 
 @media (max-width: 450px){
-    h6{
+    h1{
         font-size: 75%;
     }
     p{
@@ -15,11 +15,14 @@
     td{
         font-size: 75%;
     }
+    label{
+        font-size: 75%;
+    }
     
 }
 @media (min-width: 451px){
-    h6{
-        font-size: 90%;
+    h1{
+        font-size: 150%;
     }
     p{
         font-size: 90%;
@@ -29,6 +32,9 @@
     }
     td{
         font-size: 90%;
+    }
+    label{
+        font-size: 100%;
     }
 }
 
