@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PremioRaspaService } from '../premio-raspa.service';
+import { PremioRaspaService } from './premio-raspa.service';
 //Se importan las ayudas para el manejo del formulario
 import { FormBuilder} from '@angular/forms';
 //importamos servicio de validación

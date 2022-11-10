@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 //importamos los servicios
-import { DevolucionFraccionesService } from '../devolucion-fracciones.service';
+import { DevolucionFraccionesService } from './devolucion-fracciones.service';
 import { ValidacionesCedulaService } from '../validaciones-cedula.service';
 
 @Component({

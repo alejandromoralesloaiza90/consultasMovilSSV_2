@@ -16,13 +16,13 @@ import { InventarioLoteriaFisicaComponent } from './inventario-loteria-fisica/in
 import { TransaccionesDelDiaComponent } from './transacciones-del-dia/transacciones-del-dia.component';
 import { ConsultaPremiosComponent } from './consulta-premios/consulta-premios.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PremioRaspaService } from './premio-raspa.service';
+import { PremioRaspaService } from './component-premios/premio-raspa.service';
 import { FormsModule } from '@angular/forms';
-import { ValidacionFraccionesService } from './validacion-fracciones.service';
+import { ValidacionFraccionesService } from './component-validacion-fracciones/validacion-fracciones.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ValidacionesCedulaService } from './validaciones-cedula.service';
 import { FraccionesProcesoDevolucionComponent } from './fracciones-proceso-devolucion/fracciones-proceso-devolucion.component';
-import { DevolucionFraccionesService } from './devolucion-fracciones.service';
+import { DevolucionFraccionesService } from './fracciones-proceso-devolucion/devolucion-fracciones.service';
 
 
 const appRoutes: Routes = [
