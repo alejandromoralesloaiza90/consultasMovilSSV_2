@@ -1,14 +1,14 @@
 <div class="container">
     <div class="row mt-5 text-center">
         <div class="col-md-12">
-            <h4>Validar estado fracciones Raspe</h4>
+            <h1 class="display-4">Validar estado fracciones Raspe</h1>
         </div>
     </div>
     <br>
     <div class="row">
         <div class="col-md-12 px-5">
             <form [formGroup]="myForm" (ngSubmit)="onSubmit(fraccion.value)" class="" action="">
-                <label for="">Por favor escanee o digite la fraccion</label>
+                <label class="fw-bolder" for="">Por favor escanee o digite la fraccion</label>
                 <input (click)="limpiar()" (ngModelChange)="quitarMensajesError(fraccion.value)"
                     [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} "
                     placeholder="Ingrese el número de la fracción" class="form-control mt-3  " #fraccion

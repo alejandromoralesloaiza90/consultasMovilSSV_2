@@ -1,14 +1,14 @@
 <div class="container">
     <div class="row mt-5 text-center">
         <div class="col-md-12">
-            <h5>Fracciones en proceso de devolucion</h5>
+            <h1 class="display-4">Fracciones en proceso de devolucion</h1>
         </div>
     </div>
     <br>
     <div class="row">
         <div class="col-md-12 px-5">
             <form [formGroup]="myForm" (ngSubmit)="onSubmit(fraccionDevolucion.value)" class="" action="">
-                <label for="">Por favor digite la cedula</label>
+                <label class="fw-bolder" for="">Por favor digite la cedula</label>
                 <input (click)="limpiar()" (ngModelChange)="quitarMensajesError(fraccionDevolucion.value)"
                     formControlName="fraccionDevolucion"
                     [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} "
