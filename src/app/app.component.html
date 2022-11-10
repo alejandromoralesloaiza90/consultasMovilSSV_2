@@ -1,154 +1,43 @@
-<!-- <div id="menu">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-          <div class="container-fluid">
-            <div>
-              <a class="nav-link active" aria-current="page" routerLink="/"><img src="https://10.25.1.9/ssvsa/wp-content/themes/ssvsa/assets/img/logo.png" alt=""></a>
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
-              <ul class="navbar-nav">
 <div class="container-fluid">
-  <div class="row">
-
-    <div class="col-md-12">
-
-      <nav class="navbar navbar-expand-lg navbar-light bg-white">
-
-        <div class="container-fluid">
-
-          <div>
-            <a class="nav-link active" aria-current="page" routerLink="/"><img
-                src="https://10.25.1.9/ssvsa/wp-content/themes/ssvsa/assets/img/logo.png" alt=""></a>
-          </div>
-
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle
-              navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
-            <ul class="navbar-nav">
-
-              <li class="nav-item dropdown">
-
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Consultar Inventarios
-                </a>
-
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" routerLink="/inventarioRaspa">Inventario
-                      Raspa</a></li>
-                  <li><a class="dropdown-item" routerLink="/inventarioLoteriaFisica">Inventario Loteria
-                      Fisica</a>
-                  </li>
-                </ul>
-
-              </li>
-
-              <li class="nav-item dropdown">
-
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Consultar Premios
-                </a>
-
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" routerLink="/premiosRaspa">Premios
-                      Raspa</a></li>
-                  <li><a class="dropdown-item" routerLink="/consultaPremios">Premios
-                      Pagados</a></li>
-                </ul>
-
-              </li>
-
-              <li class="nav-item dropdown">
-
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Consultar Fracciones
-                </a>
-
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" routerLink="/validacionFracciones">Fracciones Raspa Y
-                      Listo</a></li>
-                  <li><a class="dropdown-item" routerLink="/devolucionFracciones">Fracciones En Proceso
-                      De
-                      Devolucion</a></li>
-                </ul>
-
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link active" routerLink="/transaccionesDelDia">Consultar
-                  transacciones del día</a>
-              </li>
-
-            </ul>
-          </div>
-        </div>
-
-      </nav>
-      <hr>
+  <div class="d-flex justify-content-between">
+    <div>
+      <a class="nav-link active" aria-current="page" routerLink="/"><img
+          src="https://10.25.1.9/ssvsa/wp-content/themes/ssvsa/assets/img/logo.png" alt=""></a>
     </div>
-  </div>
-</div> -->
-
-<div id="menu">
-  <div class="container-fluid">
-    <div class="d-flex justify-content-between">
-      <div>
-        <a class="nav-link active" aria-current="page" routerLink="/"><img
-            src="https://10.25.1.9/ssvsa/wp-content/themes/ssvsa/assets/img/logo.png" alt=""></a>
-      </div>
-      <div id="nav">
-        <nav class="navbar navbar-light bg-transparent">
-          <div class="container d-flex justify-content-end">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-              aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          </div>
-        </nav>
-        <div class="collapse" id="navbarToggleExternalContent">
-          <ul class="navbar-nav" >
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" routerLink="/inventarioRaspa">Inventario Raspa</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/premiosRaspa">Premios Raspa</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/validacionFracciones">Validacion de fracciones Raspa y listo</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/inventarioLoteriaFisica">Inventario loteria fisica</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/transaccionesDelDia">Consultar transacciones del día</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/consultaPremios">Consulta de premios</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/devolucionFracciones">Fracciones en proceso de devolocion</a>
-            </li>
-
-          </ul>
-        </div>
+    <div id="nav">
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <img src="../assets/img/iconomenu.png">
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/inventarioRaspa">Inventario Raspa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/premiosRaspa">Premios Raspa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/validacionFracciones">Validacion de fracciones Raspa y listo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/inventarioLoteriaFisica">Inventario loteria fisica</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/transaccionesDelDia">Consultar transacciones del día</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/consultaPremios">Consulta de premios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/devolucionFracciones">Fracciones en proceso de devolocion</a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </div>
+
 
 <router-outlet></router-outlet>
 <app-footer></app-footer>

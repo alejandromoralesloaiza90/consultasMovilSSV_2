@@ -19,9 +19,7 @@
     img{
         width: 50%;
     }
-    #nav{
-        width: 25%;
-    }
+    
 }
 
 li a{
@@ -29,3 +27,6 @@ li a{
     color: black;
 }
 
+.dropdown-toggle::after { 
+    content: none !important; 
+}
