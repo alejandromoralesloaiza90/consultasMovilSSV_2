@@ -2,28 +2,8 @@
     background-color: #1f3a93;
 }
 
-.col-sm-4{
-    width: 33%;
-}
 
-@media (max-width: 450px){
-    p{
-        font-size: x-small;
-    }
-    h4{
-        font-size: x-small;
-    }
-    img{
-        width: 100%;
-    }
-}
 
-@media (min-width: 451px){
-
-    img{
-       width: 70%; 
-    }
-}
 
 
 
