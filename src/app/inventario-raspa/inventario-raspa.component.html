@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row  mt-5 text-center">
     <div class="col-md-12">
-      <h4>Consultar inventario Raspa y Listo</h4>
+      <h1 class="display-4">Consultar inventario Raspa y Listo</h1>
     </div>
   </div>
   <br>
   <div class="row">
     <div class="col-md-12 px-5 ">
       <form [formGroup]="myForm" (ngSubmit)="onSubmit(cedula.value)" class="" action="">
-        <label for="">Por favor digite su cedula</label>
+        <label class="fw-bolder" for="">Por favor digite su cedula</label>
         <input (ngModelChange)="quitarMensajesError(cedula.value)" (click)="limpiar(cedula.value)"
           placeholder="Ingrese su numero de cedula" formControlName="cedulavalidar"
           [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " class="form-control mt-3" #cedula

@@ -4,8 +4,12 @@ h3{
     color: rgb(12, 12, 214);
 }
 
-.container-fluid {
-    margin: 1em;
+.container {
+    
     min-height: 77.6vh;
-    padding: 1em;
+    
+}
+
+.display-1{
+    text-shadow: 3px 3px  gray;
 }

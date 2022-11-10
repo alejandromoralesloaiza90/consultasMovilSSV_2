@@ -2,9 +2,10 @@
     background-color: #1f3a93;
 }
 
-li{
-    color: red;
+.dropdown{
+  transition: red 2s ease-out;
 }
+
 
 @media (min-width: 451px){
     a{
