@@ -19,6 +19,8 @@ export class TransaccionesDelDiaComponent implements OnInit {
     this.myForm = this.vali.validarTransaccionesDia();
   }
 
+  cargando: boolean = false;
+  ocultarTexto:boolean = false;
   myForm: any;
   validacionRed: boolean = true;
   condicion: string = "";
@@ -32,6 +34,8 @@ export class TransaccionesDelDiaComponent implements OnInit {
 
     if (this.myForm.valid) {
       
+      this.cargando = true;
+
       this.transaccionesdeldia.traerTransacciones(cedulaColocador, pass).subscribe(transaccionesdia => {
       
       this.transaccionDia = Object.values(transaccionesdia);
@@ -40,10 +44,16 @@ export class TransaccionesDelDiaComponent implements OnInit {
         if (this.transaccionDia.length==0) {
           this.condicion = "cedula o contraseña incorrectas";
           this.validacionRed = false;
+          this.cedula2 = "";
+          this.cargando = false;
+          this.ocultarTexto = false;
+        }else {
+          this.cedula2 = cedulaColocador;
+          this.cargando = false;
+          this.ocultarTexto = true;
         }
 
       });
-      this.validacionRed = true;
 
     } else {
       this.condicion = "Por favor verifique su cedula o su contraseña";
@@ -62,15 +72,17 @@ export class TransaccionesDelDiaComponent implements OnInit {
     }
   }
 
-  quitarMensajesError(validar:string) {
-    
-
-    if (validar.length>=1) {
+  quitarMensajesError(cedula:string) {
+    if (cedula.length==0) {
       this.validacionRed = true;
-      this.condicion = "";
-    } else {
       this.cedula2 = "";
+      this.ocultarTexto = false;
     }
-
   }
+
+  limpiar(cedula:string) {
+    this.condicion = "";
+    this.validacionRed = true;
+  }
+  
 }
