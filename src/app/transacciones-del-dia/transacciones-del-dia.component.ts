@@ -42,7 +42,7 @@ export class TransaccionesDelDiaComponent implements OnInit {
         this.condicion = "";
         
         if (this.transaccionDia.length==0) {
-          this.condicion = "cedula o contraseña incorrectas";
+          this.condicion = "aun no se han registrado transacciones con estos datos";
           this.validacionRed = false;
           this.cedula2 = "";
           this.cargando = false;
