@@ -13,7 +13,7 @@ export class ValidacionesCedulaService {
   // función validar cedula
   validarCedula() {
     this.myForm = this.fb.group({
-      cedulavalidar: ['', [Validators.required, Validators.maxLength(10), Validators.pattern('[0-9 ]*')]]
+      cedulavalidar: ['', [Validators.required,  Validators.minLength(6), Validators.maxLength(10), Validators.pattern('[0-9 ]*')]]
     })
     return this.myForm;
   }
@@ -31,7 +31,7 @@ export class ValidacionesCedulaService {
   //función validar transacciones del día
   validarTransaccionesDia(){
     this.myForm = this.fb.group({
-      cedulavalidar: ['', [Validators.required, Validators.maxLength(10), Validators.pattern('[0-9]*')]],
+      cedulavalidar: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(11), Validators.pattern('[0-9]*')]],
       transaccionvalidar: ['', [Validators.required]]
     })
 

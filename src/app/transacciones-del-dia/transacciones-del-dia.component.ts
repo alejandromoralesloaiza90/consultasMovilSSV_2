@@ -38,7 +38,7 @@ export class TransaccionesDelDiaComponent implements OnInit {
 
       this.transaccionesdeldia.traerTransacciones(cedulaColocador, pass).subscribe(transaccionesdia => {
       
-      this.transaccionDia = Object.values(transaccionesdia);
+        this.transaccionDia = Object.values(transaccionesdia);
         this.condicion = "";
         
         if (this.transaccionDia.length==0) {
