@@ -10,14 +10,17 @@
 @media (min-width: 451px){
     a{
         font-size: 78%;
-    } 
+    }
+    img{
+        width: 85%;
+    }
 }
 @media (max-width: 450px){
     a{
         font-size: 85%;
     }
     img{
-        width: 50%;
+        width: 65%;
     }
     
 }
