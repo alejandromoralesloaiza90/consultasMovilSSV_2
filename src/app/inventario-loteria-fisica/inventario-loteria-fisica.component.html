@@ -1,6 +1,6 @@
-<div class="container">
-    <div class="row mt-5 text-center">
-        <div class="col-md-12">
+<div class="container border border-1 rounded">
+    <div class="row fondo  rounded p-2 text-white text-center">
+        <div class="col-md-12 mt-2">
             <h1>Consultar Inventario Loterias Fisicas</h1>
         </div>
     </div>
@@ -14,7 +14,7 @@
                     placeholder="Ingrese su numero de cedula" class="form-control mt-3  " #cedula
                     formControlName="cedulavalidar" type="text">
                 <h6 class="condicion"> {{condicion}} </h6>
-                <input class="btn btn-primary mt-2" value="Consultar" type="submit">
+                <input class="btn bg-button text-white mt-2" value="Consultar" type="submit">
 
             </form>
         </div>
@@ -65,7 +65,9 @@
 
                     </tbody>
                 </table>
-                <pagination-controls (pageChange)="page = $event"></pagination-controls>
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+                <pagination-controls (pageChange)="page = $event" class="custom-pagination"></pagination-controls>
             </div>
         </div>
     </div>

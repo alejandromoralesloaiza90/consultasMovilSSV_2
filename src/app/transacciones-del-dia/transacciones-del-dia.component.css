@@ -3,7 +3,7 @@
 }
 @media (max-width: 450px){
     h1{
-        font-size: 130%;
+        font-size: 120%;
     }
     p{
         font-size: 78%;
@@ -37,8 +37,25 @@
     }
 }
 
-.container{
+.container {
     
     min-height: 77.6vh;
-    
+    box-shadow: 8px 8px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+.fondo{
+    background-color: #1f3a93;
+}
+
+.bg-button{
+    background-color:  #1f3a93;
+}
+
+.custom-pagination ::ng-deep .ngx-pagination .current {
+    background: white;
+    color: rgb(122, 117, 117);
+}
+
+.custom-pagination ::ng-deep .ngx-pagination li {
+    color: rgb(122, 117, 117);
 }

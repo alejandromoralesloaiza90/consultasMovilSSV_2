@@ -1,65 +1,71 @@
-<div class="container border mt-4 w-75 border-1 rounded  ">
-  <div class="row fondo  rounded p-2 text-white text-center">
-    <div class="col-md-12 mt-2 ">
-      <h1>Consultar inventario Raspa y Listo</h1>
-    </div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="col-md-12 px-5 ">
-      <form [formGroup]="myForm" (ngSubmit)="onSubmit(cedula.value)" class="" action="">
-        <label class="fw-bolder" for="">Por favor digite su cedula</label>
-        <input (ngModelChange)="quitarMensajesError(cedula.value)" (click)="limpiar(cedula.value)"
-          placeholder="Ingrese su numero de cedula" formControlName="cedulavalidar"
-          [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " class="form-control w-50 mt-3" #cedula
-          type="text">
-        <h6 class="condicion"> {{condicion}} </h6>
-        <input class="btn bg-button text-white mt-2" value="Consultar" type="submit">
 
-      </form>
-    </div>
-  </div>
-
-  <br><br>
-  <div class="row">
-    <div class="col-md-12">
-      <h6 class="mt-2" *ngIf="cargando">CARGANDO INFORMACIÓN, POR FAVOR ESPERE</h6>
-      <h6 class="mt-2" *ngIf="ocultarTexto">Cedula consultada</h6>
-      <p *ngIf="ocultarTexto"> {{cedulaInventario}} </p>
-    </div>
-  </div>
+<div class="content">
+  <div class="container border border-1 rounded">
 
 
-  <div class="row mt-4">
-    <div class="col-md-12">
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">PRODUCTO</th>
-              <th scope="col">BODEGA</th>
-              <th scope="col">SORTEO</th>
-              <th scope="col">VALOR</th>
-              <th scope="col">FRACCIONES</th>
-              <th scope="col">VENDIDA</th>
-              <th scope="col">SINVENTA</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let recorrer of inventarioRaspas | paginate: { itemsPerPage: 5, currentPage:  page }">
-
-              <td> {{recorrer[1]}} </td>
-              <td> {{recorrer[3]}} </td>
-              <td> {{recorrer[4]}} </td>
-              <td> {{recorrer[5]}} </td>
-              <td> {{recorrer[6]}} </td>
-              <td> {{recorrer[7]}} </td>
-              <td> {{recorrer[8]}} </td>
-            </tr>
-          </tbody>
-        </table>
+    <div class="row fondo rounded text-white text-center">
+      <div class="col-md-12 mt-2">
+        <h1>Consultar inventario Raspa y Listo</h1>
       </div>
-      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-12 px-5 ">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(cedula.value)" class="" action="">
+          <label class="fw-bolder" for="">Por favor digite su cedula</label>
+          <input (ngModelChange)="quitarMensajesError(cedula.value)" (click)="limpiar(cedula.value)"
+            placeholder="Ingrese su numero de cedula" formControlName="cedulavalidar"
+            [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " class="form-control mt-3" #cedula
+            type="text">
+          <h6 class="condicion"> {{condicion}} </h6>
+          <input class="btn bg-button text-white mt-2" value="Consultar" type="submit">
+
+        </form>
+      </div>
+    </div>
+
+    <br><br>
+    <div class="row">
+      <div class="col-md-12">
+        <h6 class="mt-2" *ngIf="cargando">CARGANDO INFORMACIÓN, POR FAVOR ESPERE</h6>
+        <h6 class="mt-2" *ngIf="ocultarTexto">Cedula consultada</h6>
+        <p *ngIf="ocultarTexto"> {{cedulaInventario}} </p>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">PRODUCTO</th>
+                <th scope="col">BODEGA</th>
+                <th scope="col">SORTEO</th>
+                <th scope="col">VALOR</th>
+                <th scope="col">FRACCIONES</th>
+                <th scope="col">VENDIDA</th>
+                <th scope="col">SINVENTA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let recorrer of inventarioRaspas | paginate: { itemsPerPage: 5, currentPage:  page }">
+
+                <td> {{recorrer[1]}} </td>
+                <td> {{recorrer[3]}} </td>
+                <td> {{recorrer[4]}} </td>
+                <td> {{recorrer[5]}} </td>
+                <td> {{recorrer[6]}} </td>
+                <td> {{recorrer[7]}} </td>
+                <td> {{recorrer[8]}} </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="d-flex justify-content-center mt-3">
+          <pagination-controls (pageChange)="page = $event" class="custom-pagination"></pagination-controls>
+        </div>
+      </div>
     </div>
   </div>
 

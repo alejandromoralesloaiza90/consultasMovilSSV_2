@@ -2,10 +2,6 @@
     background-color: #1f3a93;
 }
 
-.dropdown{
-  transition: red 2s ease-out;
-}
-
 
 @media (min-width: 451px){
     a{
@@ -14,6 +10,9 @@
     img{
         width: 85%;
     }
+    li a{
+        width: 250px;
+    }
 }
 @media (max-width: 450px){
     a{
@@ -21,6 +20,9 @@
     }
     img{
         width: 65%;
+    }
+    li a{
+        width: 200px;
     }
     
 }

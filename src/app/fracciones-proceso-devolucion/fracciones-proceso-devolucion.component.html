@@ -1,6 +1,6 @@
-<div class="container">
-    <div class="row mt-5 text-center">
-        <div class="col-md-12">
+<div class="container border border-1 rounded">
+    <div class="row fondo rounded text-white text-center">
+        <div class="col-md-12 mt-2">
             <h1>Fracciones en proceso de devolucion</h1>
         </div>
     </div>
@@ -16,7 +16,7 @@
                     type="text" (ngModelChange)="mostrarTabla=false" (ngModelChange)="ocultarTexto=false">
 
                 <h6 class="condicion"> {{condicion}} </h6>
-                <input class="btn btn-primary mt-2" (click)="fraccion1(fraccionDevolucion.value)" value="Consultar"
+                <input class="btn bg-button text-white mt-2" (click)="fraccion1(fraccionDevolucion.value)" value="Consultar"
                     type="submit">
 
             </form>
@@ -77,9 +77,10 @@
 
                     </tbody>
                 </table>
-                <pagination-controls (pageChange)="page = $event"></pagination-controls>
             </div>
-
+            <div class="d-flex justify-content-center mt-3">
+                <pagination-controls (pageChange)="page = $event" class="custom-pagination"></pagination-controls>
+            </div>
         </div>
     </div>
 
