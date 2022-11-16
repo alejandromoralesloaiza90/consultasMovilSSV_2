@@ -13,11 +13,11 @@
                     formControlName="fraccionDevolucion"
                     [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} "
                     placeholder="Ingrese su numero de cedula" class="form-control mt-3  " #fraccionDevolucion
-                    type="number" (ngModelChange)="mostrarTabla=false" (ngModelChange)="ocultarTexto=false">
+                    type="number">
 
                 <h6 class="condicion"> {{condicion}} </h6>
-                <input class="btn bg-button text-white mt-2" (click)="fraccion1(fraccionDevolucion.value)" value="Consultar"
-                    type="submit">
+                <input class="btn bg-button text-white mt-2" (click)="fraccion1(fraccionDevolucion.value)"
+                    value="Consultar" type="submit">
 
             </form>
         </div>

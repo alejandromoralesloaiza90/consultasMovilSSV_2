@@ -4,6 +4,7 @@ import { PremioRaspaService } from './premio-raspa.service';
 import { FormBuilder} from '@angular/forms';
 //importamos servicio de validación
 import { ValidacionesCedulaService } from '../validaciones-cedula.service';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-component-premios',
@@ -72,7 +73,8 @@ export class ComponentPremiosComponent implements OnInit {
   //con esta funcion limpiamos la tabla y quitamos mensajes de error
   quitarMensajesError(cedula:string) {
     
-    if (cedula.length==0) {
+    if (cedula.length == 0) {
+      this.page = 0;
       this.mostrartabla = false;
       this.ocultarTexto = false;
       this.mostrartabla = false;

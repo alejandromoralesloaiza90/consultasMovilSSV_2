@@ -68,6 +68,7 @@ export class InventarioLoteriaFisicaComponent implements OnInit {
   quitarMensajesError(cedula:string) {
 
     if (cedula.length == 0) {
+      this.page = 0;
       this.inventarioLoteriaFisica = [""];
       this.validacionRed = true;
       this.condicion = "";

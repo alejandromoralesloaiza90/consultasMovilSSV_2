@@ -80,7 +80,8 @@ export class ConsultaPremiosComponent implements OnInit {
 
   //validamos los mensajes de error  al borrar lo escrito en el input
   quitarMensajesError(serie:string , numero:string ) {
-    if (serie=="" && numero=="")  {
+    if (serie == "" && numero == "") {
+      this.page = 0;
       this.mostrarTabla = false;
       this.ocultarTexto = false;
       this.validacionRed = true;

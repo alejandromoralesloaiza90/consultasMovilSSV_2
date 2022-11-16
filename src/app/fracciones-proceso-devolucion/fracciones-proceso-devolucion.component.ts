@@ -76,8 +76,11 @@ export class FraccionesProcesoDevolucionComponent implements OnInit {
 
   //Inhabilitar mensajes de error
   quitarMensajesError(fraccionDevolucion:string) {
-    if (fraccionDevolucion=="") {
-      this.mostrarTabla = false;
+    if (fraccionDevolucion == "") {
+      this.devolucionFracciones = [];
+      this.page = 0;
+      
+      
       this.ocultarTexto = false;
       this.validacionRed = true;
       this.condicion = "";

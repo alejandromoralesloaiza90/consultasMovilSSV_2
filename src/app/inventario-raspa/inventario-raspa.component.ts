@@ -67,7 +67,8 @@ export class InventarioRaspaComponent implements OnInit {
   }
 
   quitarMensajesError(cedula:string) {
-    if (cedula.length==0) {
+    if (cedula.length == 0) {
+      this.page = 0;
       this.inventarioRaspas = [];
       this.cedulaInventario = "";
       this.ocultarTexto = false;
