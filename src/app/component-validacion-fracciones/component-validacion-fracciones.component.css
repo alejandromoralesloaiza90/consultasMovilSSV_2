@@ -17,6 +17,9 @@
     label{
         font-size: 100%;
     }
+    h6{
+        font-size: 78%;
+    }
     
 }
 @media (min-width: 451px){
@@ -33,6 +36,9 @@
         font-size: 90%;
     }
     label{
+        font-size: 100%;
+    }
+    h6{
         font-size: 100%;
     }
 }

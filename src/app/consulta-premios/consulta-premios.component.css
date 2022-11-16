@@ -18,6 +18,9 @@
     label{
         font-size: 100%;
     }
+    h6{
+        font-size: 78%;
+    }
     
 }
 @media (min-width: 451px){
@@ -34,6 +37,9 @@
         font-size: 90%;
     }
     label{
+        font-size: 100%;
+    }
+    h6{
         font-size: 100%;
     }
 }
@@ -53,8 +59,8 @@
 }
 
 .custom-pagination ::ng-deep .ngx-pagination .current {
-    background: white;
-    color: rgb(122, 117, 117);
+    background: rgb(122, 117, 117);
+    color: rgb(255, 255, 255);
 }
 
 .custom-pagination ::ng-deep .ngx-pagination li {
