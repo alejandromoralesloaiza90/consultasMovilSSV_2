@@ -53,3 +53,8 @@
 .bg-button{
     background-color:  #1f3a93;
 }
+
+.custom-pagination ::ng-deep .ngx-pagination .current {
+    background: white;
+    color: rgb(121, 121, 121);
+}

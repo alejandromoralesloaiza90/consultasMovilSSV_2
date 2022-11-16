@@ -1,6 +1,5 @@
-<div class="container">
-
-    <div class="row mt-5 text-center">
+<div class="container border mt-4 w-75 border-1 rounded">
+    <div class="row fondo rounded p-2 text-white text-center">
         <div class="col-md-12">
             <h1>Consultar transacciones del día</h1>
         </div>
@@ -18,7 +17,7 @@
                 <label class="fw-bolder" >Ingrese contraseña de POSSLIM a continuación</label>
                 <input (ngModelChange)="quitarMensajesError(pass.value)" (click)="limpiar(pass.value)" [ngStyle]="{'border-color': validacionRed == false ? 'red' : 'black'}" placeholder="Ingrese su numero de contaseña" class="form-control mt-3" #pass formControlName="transaccionvalidar" type="text" />
                 <h6 class="condicion mt-3">{{ condicion }}</h6>
-                <input class="btn btn-primary mt-2" value="Consultar" (click)="cedula1(cedula.value)" type="submit" />
+                <input class="btn bg-button text-white mt-2" value="Consultar" (click)="cedula1(cedula.value)" type="submit" />
 
             </form>
         </div>
@@ -67,8 +66,8 @@
                     </tbody>
                 </table>
             </div>
-            <div class="d-flex justify-content-center"  class="mt-3">
-                <pagination-controls (pageChange)="pages = $event" class="d-flex justify-content-center"></pagination-controls>
+            <div class="d-flex justify-content-center mt-3">
+                <pagination-controls (pageChange)="pages = $event" class="custom-pagination"></pagination-controls>
             </div>
            
         </div>
