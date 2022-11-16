@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@media (min-width: 821px){
+    .form-control{
+        width: 50%;
+    }
+    .content{
+        margin: 8%;
+        margin-top: 5%;
+        margin-bottom: 3%;
+    }
+}
+@media (max-width: 820px){
+    .form-control{
+        width: 100%;
+    }
+    .content{
+        margin: 2%;
+        margin-top: 5%;
+        margin-bottom: 3%;
+    }
+    .fondo{
+        height: 60px;
+    }
+   
+    
+}

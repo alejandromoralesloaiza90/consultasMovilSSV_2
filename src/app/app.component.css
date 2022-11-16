@@ -10,6 +10,9 @@
     img{
         width: 85%;
     }
+    li a{
+        width: 250px;
+    }
 }
 @media (max-width: 450px){
     a{
@@ -17,6 +20,9 @@
     }
     img{
         width: 65%;
+    }
+    li a{
+        width: 200px;
     }
     
 }
