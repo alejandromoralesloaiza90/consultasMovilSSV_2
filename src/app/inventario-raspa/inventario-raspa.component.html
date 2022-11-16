@@ -15,7 +15,7 @@
           <input (ngModelChange)="quitarMensajesError(cedula.value)" (click)="limpiar(cedula.value)"
             placeholder="Ingrese su numero de cedula" formControlName="cedulavalidar"
             [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} " class="form-control mt-3" #cedula
-            type="text">
+            type="number">
           <h6 class="condicion"> {{condicion}} </h6>
           <input class="btn bg-button text-white mt-2" value="Consultar" type="submit">
 

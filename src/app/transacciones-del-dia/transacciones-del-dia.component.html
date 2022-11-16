@@ -15,7 +15,7 @@
                     <input (ngModelChange)="quitarMensajesError(cedula.value)" (click)="limpiar(cedula.value)"
                         [ngStyle]="{'border-color': validacionRed == false ? 'red' : 'black'}"
                         placeholder="Ingrese su numero de cedula" class="form-control mt-3" #cedula
-                        formControlName="cedulavalidar" type="text" /><br />
+                        formControlName="cedulavalidar" type="number" /><br />
                     <label class="fw-bolder">Ingrese contraseña de POSSLIM a continuación</label>
                     <input (ngModelChange)="quitarMensajesError(pass.value)" (click)="limpiar(pass.value)"
                         [ngStyle]="{'border-color': validacionRed == false ? 'red' : 'black'}"

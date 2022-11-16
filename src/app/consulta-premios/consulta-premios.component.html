@@ -18,7 +18,7 @@
                     <input (click)="limpiar()" (ngModelChange)="quitarMensajesError(serie.value , numero.value )"
                         class="form-control mt-3" [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} "
                         placeholder="Ingrese el número" class="form-control mt-2  " #numero formControlName="numero"
-                        type="text" (ngModelChange)="mostrarTabla=false" (ngModelChange)="ocultarTexto=false">
+                        type="number" (ngModelChange)="mostrarTabla=false" (ngModelChange)="ocultarTexto=false">
                     <h6 class="condicion"> {{condicion}} </h6>
                     <input class="btn bg-button text-white mt-2" value="Consultar"
                         (click)="premios1(serie.value,numero.value)" type="submit">

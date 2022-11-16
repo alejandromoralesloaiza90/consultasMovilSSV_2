@@ -12,7 +12,7 @@
                 <input (click)="limpiar()" (ngModelChange)="quitarMensajesError(fraccion.value)"
                     [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} "
                     placeholder="Ingrese el número de la fracción" class="form-control mt-3  " #fraccion
-                    formControlName="fraccionvalidar" type="text">
+                    formControlName="fraccionvalidar" type="number">
                 <h6 class="condicion"> {{condicion}} </h6>
                 <input class="btn bg-button text-white mt-2" value="Consultar" type="submit">
 
