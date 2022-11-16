@@ -14,9 +14,9 @@
             <form [formGroup]="myForm" (ngSubmit)="onSubmit(cedula.value, pass.value)" class="" action="">
 
                 <label class="fw-bolder" >Por favor digite la cedula</label>
-                <input (ngModelChange)="quitarMensajesError(cedula.value)" [ngStyle]="{'border-color': validacionRed == false ? 'red' : 'black'}" placeholder="Ingrese su numero de cedula" class="form-control mt-3" #cedula formControlName="cedulavalidar" type="text" /><br />
+                <input (ngModelChange)="quitarMensajesError(cedula.value)" (click)="limpiar(cedula.value)" [ngStyle]="{'border-color': validacionRed == false ? 'red' : 'black'}" placeholder="Ingrese su numero de cedula" class="form-control mt-3" #cedula formControlName="cedulavalidar" type="text" /><br />
                 <label class="fw-bolder" >Ingrese contraseña de POSSLIM a continuación</label>
-                <input (ngModelChange)="quitarMensajesError(pass.value)" [ngStyle]="{'border-color': validacionRed == false ? 'red' : 'black'}" placeholder="Ingrese su numero de contaseña" class="form-control mt-3" #pass formControlName="transaccionvalidar" type="text" />
+                <input (ngModelChange)="quitarMensajesError(pass.value)" (click)="limpiar(pass.value)" [ngStyle]="{'border-color': validacionRed == false ? 'red' : 'black'}" placeholder="Ingrese su numero de contaseña" class="form-control mt-3" #pass formControlName="transaccionvalidar" type="text" />
                 <h6 class="condicion mt-3">{{ condicion }}</h6>
                 <input class="btn btn-primary mt-2" value="Consultar" (click)="cedula1(cedula.value)" type="submit" />
 
@@ -26,10 +26,10 @@
 
     <div class="row">
         <div class="col-md-12">
-            <h6 *ngIf="">CARGANDO INFORMACIÓN, POR FAVOR ESPERE</h6>
+            <h6 *ngIf="cargando">CARGANDO INFORMACIÓN, POR FAVOR ESPERE</h6>
 
-            <h6>Cedula consultada</h6>
-            <p>{{ cedula2 }}</p>
+            <h6 class="mt-2" *ngIf="ocultarTexto">Cedula consultada</h6>
+            <p *ngIf="ocultarTexto"> {{cedula2}} </p>
         </div>
     </div>
 
@@ -66,8 +66,11 @@
                         <tr></tr>
                     </tbody>
                 </table>
-                <pagination-controls (pageChange)="pages = $event"></pagination-controls>
             </div>
+            <div class="d-flex justify-content-center">
+                <pagination-controls (pageChange)="pages = $event" class="d-flex justify-content-center"></pagination-controls>
+            </div>
+           
         </div>
     </div>
 </div>
