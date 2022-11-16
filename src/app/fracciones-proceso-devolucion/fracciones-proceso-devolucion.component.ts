@@ -59,7 +59,7 @@ export class FraccionesProcesoDevolucionComponent implements OnInit {
         }
       });
     } else {
-      this.condicion = "Por favor digite CV y su número de cedula";
+      this.condicion = "Por favor digite su número de cedula";
       this.validacionRed = false;
     }
   }

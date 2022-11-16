@@ -9,7 +9,7 @@ export class DevolucionFraccionesService {
   constructor(private http: HttpClient) { }
   
   devolucionFracciones(cedula:string) {
-    return this.http.get(`fraccionesdevolucion/'${cedula}'`);
+    return this.http.get(`fraccionesdevolucion/'CV${cedula}'`);
   }
 
 
