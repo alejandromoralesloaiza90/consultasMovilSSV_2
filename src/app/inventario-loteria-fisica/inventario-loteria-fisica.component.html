@@ -1,73 +1,75 @@
-<div class="container border border-1 rounded">
-    <div class="row fondo  rounded p-2 text-white text-center">
-        <div class="col-md-12 mt-2">
-            <h1>Consultar Inventario Loterias Fisicas</h1>
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-md-12 px-5">
-            <form [formGroup]="myForm" (ngSubmit)="onSubmit(cedula.value)" class="" action="">
-                <label class="fw-bolder" for="">Por favor digite la cedula</label>
-                <input (click)="limpiar()" (ngModelChange)="quitarMensajesError(cedula.value)"
-                    [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} "
-                    placeholder="Ingrese su numero de cedula" class="form-control mt-3  " #cedula
-                    formControlName="cedulavalidar" type="text">
-                <h6 class="condicion"> {{condicion}} </h6>
-                <input class="btn bg-button text-white mt-2" value="Consultar" type="submit">
-
-            </form>
-        </div>
-    </div>
-
-    <br>
-    <div class="row">
-        <div class="col-md-12">
-
-            <h6 class="mt-2" *ngIf="cargando">CARGANDO INFORMACIÓN, POR FAVOR ESPERE</h6>
-
-            <h6 *ngIf="mostrarTexto">Cedula consultada</h6>
-            <p>{{cedula2}}</p>
-
-        </div>
-    </div>
-
-    <div class="row mt-4">
-        <div class="col-md-12">
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">PRODUCTO</th>
-                            <th scope="col">BODEGA</th>
-                            <th scope="col">FECHASORT</th>
-                            <th scope="col">SORTEO</th>
-                            <th scope="col">VALOR</th>
-                            <th scope="col">FRACCIONES</th>
-                            <th scope="col">VENDIDA</th>
-                            <th scope="col">SINVENTA</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr
-                            *ngFor="let loterias of inventarioLoteriaFisica | paginate: { itemsPerPage: 5, currentPage: page } ">
-                            <td>{{loterias[2]}}</td>
-                            <td>{{loterias[4]}}</td>
-                            <td>{{loterias[0].substr(0,10)}}</td>
-                            <td>{{loterias[5]}}</td>
-                            <td>{{loterias[6]}}</td>
-                            <td>{{loterias[7]}}</td>
-                            <td>{{loterias[8]}}</td>
-                            <td>{{loterias[9]}}</td>
-                        </tr>
-
-
-
-                    </tbody>
-                </table>
+<div class="content">
+    <div class="container border border-1 rounded">
+        <div class="row fondo  rounded p-2 text-white text-center">
+            <div class="col-md-12 mt-2">
+                <h1>Consultar Inventario Loterias Fisicas</h1>
             </div>
-            <div class="d-flex justify-content-center mt-3">
-                <pagination-controls (pageChange)="page = $event" class="custom-pagination"></pagination-controls>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12 px-5">
+                <form [formGroup]="myForm" (ngSubmit)="onSubmit(cedula.value)" class="" action="">
+                    <label class="fw-bolder" for="">Por favor digite la cedula</label>
+                    <input (click)="limpiar()" (ngModelChange)="quitarMensajesError(cedula.value)"
+                        [ngStyle]="{'border-color':(validacionRed==false)?'red':'black'} "
+                        placeholder="Ingrese su numero de cedula" class="form-control mt-3  " #cedula
+                        formControlName="cedulavalidar" type="text">
+                    <h6 class="condicion"> {{condicion}} </h6>
+                    <input class="btn bg-button text-white mt-2" value="Consultar" type="submit">
+
+                </form>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+
+                <h6 class="mt-2" *ngIf="cargando">CARGANDO INFORMACIÓN, POR FAVOR ESPERE</h6>
+
+                <h6 *ngIf="mostrarTexto">Cedula consultada</h6>
+                <p>{{cedula2}}</p>
+
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">PRODUCTO</th>
+                                <th scope="col">BODEGA</th>
+                                <th scope="col">FECHASORT</th>
+                                <th scope="col">SORTEO</th>
+                                <th scope="col">VALOR</th>
+                                <th scope="col">FRACCIONES</th>
+                                <th scope="col">VENDIDA</th>
+                                <th scope="col">SINVENTA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr
+                                *ngFor="let loterias of inventarioLoteriaFisica | paginate: { itemsPerPage: 5, currentPage: page } ">
+                                <td>{{loterias[2]}}</td>
+                                <td>{{loterias[4]}}</td>
+                                <td>{{loterias[0].substr(0,10)}}</td>
+                                <td>{{loterias[5]}}</td>
+                                <td>{{loterias[6]}}</td>
+                                <td>{{loterias[7]}}</td>
+                                <td>{{loterias[8]}}</td>
+                                <td>{{loterias[9]}}</td>
+                            </tr>
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="d-flex justify-content-center mt-3">
+                    <pagination-controls (pageChange)="page = $event" class="custom-pagination"></pagination-controls>
+                </div>
             </div>
         </div>
     </div>
