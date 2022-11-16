@@ -10,6 +10,7 @@ import { ValidacionesCedulaService } from '../validaciones-cedula.service';
   styleUrls: ['./inventario-raspa.component.css']
 })
 export class InventarioRaspaComponent implements OnInit {
+  aumentar: any;
 
   constructor(private raspas:InventarioRaspaService, private fb: FormBuilder, private vali:ValidacionesCedulaService ) { }
 
@@ -34,6 +35,15 @@ export class InventarioRaspaComponent implements OnInit {
       this.cargando = true;
       
       this.raspas.cargarRaspas(cedulas).subscribe(raspas => {
+
+        for (let i = 0; i <Object.values(raspas).length; i++) {
+          setTimeout(() => {          
+            this.aumentar += this.aumentar + i;
+          }, )
+          
+          
+        }
+
         this.inventarioRaspas = Object.values(raspas);
         
         if (this.inventarioRaspas.length==0) {

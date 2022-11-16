@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -9,6 +9,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { InventarioRaspaComponent } from './inventario-raspa/inventario-raspa.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+
 
 
 
@@ -23,6 +24,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ValidacionesCedulaService } from './validaciones-cedula.service';
 import { FraccionesProcesoDevolucionComponent } from './fracciones-proceso-devolucion/fracciones-proceso-devolucion.component';
 import { DevolucionFraccionesService } from './fracciones-proceso-devolucion/devolucion-fracciones.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpModule } from '@ngx-progressbar/http';
 
 
 const appRoutes: Routes = [
@@ -52,6 +56,7 @@ const appRoutes: Routes = [
     ConsultaPremiosComponent,
     FraccionesProcesoDevolucionComponent,
     
+    
   ],
   imports: [
     BrowserModule,
@@ -59,7 +64,14 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+  
+    NgProgressModule.withConfig({
+      color: "blue"
+    }),
+
+    NgProgressHttpModule
   ],
   providers: [
     InventarioRaspaComponent,
@@ -70,6 +82,7 @@ const appRoutes: Routes = [
     
   ],
     
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

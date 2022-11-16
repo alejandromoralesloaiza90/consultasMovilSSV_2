@@ -35,11 +35,11 @@ export class ComponentPremiosComponent implements OnInit {
   onSubmit(cedulaColocador:string) {
     
     if (this.myForm.valid) {
-      
+      this.cargando = true;
       //llamos al servicio que nos trae los datos por url
       this.premiosRaspas.cargarPremiosRaspas(cedulaColocador).subscribe(premiosRaspa => {
 
-        this.cargando = true;
+       
 
         //aqui hacemos mas validaciones
         this.savePremios = Object.values(premiosRaspa);
